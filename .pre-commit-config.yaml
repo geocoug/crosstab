@@ -1,0 +1,66 @@
+---
+fail_fast: false
+
+exclude: |
+  (?x)^(
+    build/ |
+    dist/ |
+  )$
+
+repos:
+  - repo: meta
+    hooks:
+      - id: identity
+      - id: check-hooks-apply
+  # Protect secrets using Gitleaks
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
+  # Spell check
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.22.9
+    hooks:
+      - id: typos
+  # Supported base hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=10000]
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+  # Markdown lint
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.41.0
+    hooks:
+      - id: markdownlint
+        types: [file]
+        files: .(md|qmd)$
+        args: [--disable, MD013]
+  # Add trailing commas to calls and literals.
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v3.1.0
+    hooks:
+      - id: add-trailing-comma
+  # Lint and format Python files
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.5.3
+    hooks:
+      # Run the Ruff linter.
+      - id: ruff
+        args: [--config=pyproject.toml]
+      # Run the Ruff formatter.
+      - id: ruff-format
+        args: [--config=pyproject.toml]
+  # Mypy static type checker
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.1
+    hooks:
+      - id: mypy
