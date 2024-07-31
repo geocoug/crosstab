@@ -9,3 +9,7 @@ build/
 docs/_build/
 site/
 tests/data/
+*.sqlite
+*.xlsx
+*.csv
+*.sh
