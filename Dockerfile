@@ -1,48 +1,35 @@
-# ~~~~~~~~~~~
-# Build stage
-# ~~~~~~~~~~~
 FROM python:3.12-slim as staging
-WORKDIR /app
-
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-RUN apt-get update -y && \
-    pip install --no-cache-dir --upgrade pip==24.1.2
-
-COPY ./requirements.txt .
-
-RUN pip wheel --no-cache-dir --wheel-dir /app/wheels -r requirements.txt
-
-
-# ~~~~~~~~~~~
-# Build final
-# ~~~~~~~~~~~
-FROM python:3.12-slim
 
 ENV HOME=/app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir -p $HOME
-
 WORKDIR $HOME
 
-RUN addgroup --system app && \
-    adduser --system --group app && \
-    apt-get update && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update -y \
+    && apt-get install -y wget \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY --from=staging /app/wheels /wheels
+ADD --chmod=755 https://astral.sh/uv/install.sh /install.sh
 
-# hadolint ignore=DL3013
-RUN pip install --no-cache-dir --upgrade pip==24.1.2 && \
-    pip install --no-cache-dir /wheels/*
+RUN /install.sh \
+    && rm /install.sh
 
-COPY . $HOME
+COPY ./requirements.txt /tmp/requirements.txt
 
-RUN chown -R app:app $HOME
+RUN $HOME/.cargo/bin/uv pip install --system --no-cache -r /tmp/requirements.txt \
+    && rm -rf /tmp/requirements.txt
+
+COPY ./crosstab $HOME/crosstab
+
+COPY ./pyproject.toml $HOME
+
+RUN $HOME/.cargo/bin/uv pip install --system --no-cache $HOME
+
+RUN addgroup --system app \
+    && adduser --system --group app \
+    && chown -R app:app $HOME
 
 USER app
 
-ENTRYPOINT [ "python", "crosstab/crosstab.py" ]
+ENTRYPOINT [ "crosstab" ]
