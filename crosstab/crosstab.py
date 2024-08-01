@@ -243,8 +243,9 @@ class Crosstab:
         logger.debug("Creating 'data' table in SQLite database.")
         with conn:
             cursor = conn.cursor()
+            coldef = ", ".join([f'"{col}"' for col in self.csv_columns])
             cursor.execute(
-                f"CREATE TABLE data ({', '.join([f'"{col}"' for col in self.csv_columns])});",
+                f"CREATE TABLE data ({coldef});",
             )
             cursor.executemany(
                 f"INSERT INTO data VALUES ({', '.join(['?' for _ in self.csv_columns])});",
