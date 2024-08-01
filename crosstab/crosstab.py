@@ -273,7 +273,9 @@ class Crosstab:
             cursor.execute(sql)
             multiple_vals = cursor.fetchall()
             if multiple_vals:
-                raise ValueError("Multiple values found for the row/column combination(s).")
+                raise ValueError(
+                    "Multiple values found for the row/column combination(s).",
+                )
 
         # Create the workbook
         logger.debug("Initializing the workbook.")
@@ -286,12 +288,15 @@ class Crosstab:
             readme = wb.create_sheet()
         readme.title = "README"
         metadata = {
-            "Creation Time": datetime.datetime.now().isoformat(sep=" ", timespec="seconds"),
+            "Creation Time": datetime.datetime.now().isoformat(
+                sep=" ",
+                timespec="seconds",
+            ),
             "User": getpass.getuser(),
             "Script Version": __version__,
             "Input File": self.incsv.resolve().as_posix(),
             "Output File": self.outxlsx.resolve().as_posix(),
-            "SQLite File": self.outxlsx.with_suffix(".sqlite").resolve().as_posix() if self.keep_sqlite else None,
+            "SQLite File": (self.outxlsx.with_suffix(".sqlite").resolve().as_posix() if self.keep_sqlite else None),
         }
         readme.cell(row=1, column=1, value="Crosstab Metadata").style = TITLE_TEXT_STYLE
         readme.merge_cells(start_row=1, start_column=1, end_row=1, end_column=2)
@@ -325,7 +330,11 @@ class Crosstab:
                 if i == 0:
                     logger.debug(f"Writing column header row: {self.col_headers[c]}.")
                     # Label the header row
-                    sheet.cell(row=c + XTAB_START_ROW, column=start_col - 1, value=self.col_headers[c])
+                    sheet.cell(
+                        row=c + XTAB_START_ROW,
+                        column=start_col - 1,
+                        value=self.col_headers[c],
+                    )
                     # Style the labels
                     sheet.cell(row=c + XTAB_START_ROW, column=start_col - 1).style = SECONDARY_HEADER_STYLE
                 # Add the column header
@@ -358,7 +367,11 @@ class Crosstab:
         logger.debug(f"Writing row headers: {self.row_headers}.")
         start_row = len(self.col_headers) + XTAB_START_ROW
         for i in range(len(self.row_headers)):
-            sheet.cell(row=start_row, column=i + XTAB_START_COL, value=self.row_headers[i]).style = PRIMARY_HEADER_STYLE
+            sheet.cell(
+                row=start_row,
+                column=i + XTAB_START_COL,
+                value=self.row_headers[i],
+            ).style = PRIMARY_HEADER_STYLE
 
         # Write the data
         logger.debug("Writing crosstab data.")
@@ -367,10 +380,21 @@ class Crosstab:
             for i, row_header in enumerate(row_header_vals):
                 # Write the row keys
                 for h, hdr in enumerate(row_header):
-                    sheet.cell(row=start_row + i + 1, column=h + XTAB_START_COL, value=hdr).style = DATA_STYLE
+                    sheet.cell(
+                        row=start_row + i + 1,
+                        column=h + XTAB_START_COL,
+                        value=hdr,
+                    ).style = DATA_STYLE
                 # Write the data
                 for j, col_header in enumerate(col_header_vals):
-                    sql = f"SELECT {', '.join(self.value_cols)} FROM data WHERE {' AND '.join([f'"{self.row_headers[k]}" = \'{row_header[k]}\'' for k in range(len(self.row_headers))])} AND {' AND '.join([f'"{self.col_headers[k]}" = "{col_header[k]}"' for k in range(len(self.col_headers))])};"  # noqa: E501
+                    cols = ", ".join(self.value_cols)
+                    where1 = " AND ".join(
+                        [f"\"{self.row_headers[k]}\" = '{row_header[k]}'" for k in range(len(self.row_headers))],
+                    )
+                    where2 = " AND ".join(
+                        [f'"{self.col_headers[k]}" = "{col_header[k]}"' for k in range(len(self.col_headers))],
+                    )
+                    sql = f"SELECT {cols} FROM data WHERE {where1} AND {where2};"
                     # logger.debug(sql)
                     cursor.execute(sql)
                     if cursor.rowcount > 1:
