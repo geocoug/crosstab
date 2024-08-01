@@ -126,6 +126,50 @@ class Crosstab:
 
         Raises:
             ValueError: Raised if the input file does not exist, is not a file, is empty, is not a CSV file, or if the row_headers, col_headers, or value_cols are not specified.
+
+        Example:
+
+        If you have a CSV file with the following data:
+
+        ```csv
+        location,sample,cas_rn,parameter,concentration,units
+        Loc1,Samp1,7440-66-6,Zinc,1.0,mg/L
+        Loc1,Samp1,7439-89-6,Iron,2.7,mg/L
+        Loc2,Samp2,7440-66-6,Zinc,8.0,mg/L
+        Loc2,Samp2,7439-89-6,Iron,3.23,mg/L
+        ```
+
+        The code...
+
+        ```python
+        from pathlib import Path
+        from crosstab import Crosstab
+
+        Crosstab(
+            incsv=Path("input.csv"),
+            outxlsx=Path("output.xlsx"),
+            row_headers=("location", "sample"),
+            col_headers=("cas_rn", "parameter"),
+            value_cols=("concentration", "units"),
+            keep_sqlite=True,
+            keep_src=True,
+        ).crosstab()
+        ```
+
+        ...will produce a crosstab table with the following structure:
+
+        ```txt
+        ┌──────────┬───────────┬───────────────────────┬───────────────────────┐
+        │          ┆   cas_rn  ┆       7440-66-6       ┆       7439-89-6       │
+        │          ┆ --------- ┆ --------------------- ┆ --------------------- │
+        │          ┆ parameter ┆          Zinc         ┆          Iron         │
+        │ -------- ┆ --------- ┆ --------------------- ┆ --------------------- │
+        │ location ┆  sample   ┆ concentration ┆ units ┆ concentration ┆ units │
+        ╞══════════╪═══════════╪═══════════════╪═══════╪═══════════════╪═══════╡
+        │ Loc1     ┆ Samp1     │ 1.0           │ mg/L  │ 2.7           │ mg/L  │
+        │ Loc2     ┆ Samp2     │ 8.0           │ mg/L  │ 3.23          │ mg/L  │
+        └──────────┴───────────┴───────────────┴───────┴───────────────┴───────┘
+        ```
         """  # noqa: E501
         self.incsv = incsv
         self.outxlsx = outxlsx
