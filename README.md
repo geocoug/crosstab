@@ -10,12 +10,12 @@
 
 Go from this:
 
-![Crosstab Input](https://raw.githubusercontent.com/geocoug/crosstab/main/static/crosstab-input.png)
+![Crosstab Input](https://raw.githubusercontent.com/geocoug/crosstab/main/crosstab-input.png)
 
 To this:
 
-![Crosstab Output](https://raw.githubusercontent.com/geocoug/crosstab/main/static/crosstab-output.png)
-![Crosstab Metadata](https://raw.githubusercontent.com/geocoug/crosstab/main/static/crosstab-metadata.png)
+![Crosstab Output](https://raw.githubusercontent.com/geocoug/crosstab/main/crosstab-output.png)
+![Crosstab Metadata](https://raw.githubusercontent.com/geocoug/crosstab/main/crosstab-metadata.png)
 
 ## Installation
 
