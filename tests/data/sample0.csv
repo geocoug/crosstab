@@ -1,0 +1,5 @@
+location,sample,cas_rn,parameter,concentration,units
+Loc1,Samp1,7440-66-6,Zinc,1,mg/L
+Loc1,Samp1,7439-89-6,Iron,2.7,mg/L
+Loc2,Samp2,7440-66-6,Zinc,8,mg/L
+Loc2,Samp2,7439-89-6,Iron,3.23,mg/L

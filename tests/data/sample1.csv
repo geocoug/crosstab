@@ -1,0 +1,1000 @@
+location_id,sample_date,sample_material,sample_id,upper_depth,lower_depth,depth_units,split_type,sample_no,lab,labsample,cas_rn,analyte,analyte_name,concentration,qualifiers,units
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,375224,PFBA,Perfluorobutanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,375735,PFBS,Perfluorobutanesulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,335762,PFDA,Perfluorodecanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,307551,PFDoA,Perfluorododecanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,335773,PFDS,Perfluorodecanesulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,375859,PFHpA,Perfluoroheptanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,375928,PFHpS,Perfluoroheptanesulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,307244,PFHxA,Perfluorohexanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,355464,PFHxS,Perfluorohexanesulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,375951,PFNA,Perfluorononanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,68259121,PFNS,Perfluorononanesulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,335671,PFOA,Perfluorooctanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,1763231,PFOS,Perfluorooctanesulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,754916,PFOSA,Perfluorooctanesulfonamide,1,UJ,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,2706903,PFPeA,Perfluoropentanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,2706914,PFPeS,Perfluoropentanesulfonic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,376067,PFTA,Perfluorotetradecanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,72629948,PFTrDA,Perfluorotridecanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10801,5,7,ft,N,WUR10801,VIAE,2312108-01,2058948,PFUnDA,Perfluoroundecanoic acid,1,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,375224,PFBA,Perfluorobutanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,375735,PFBS,Perfluorobutanesulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,335762,PFDA,Perfluorodecanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,307551,PFDoA,Perfluorododecanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,335773,PFDS,Perfluorodecanesulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,375859,PFHpA,Perfluoroheptanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,375928,PFHpS,Perfluoroheptanesulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,307244,PFHxA,Perfluorohexanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,355464,PFHxS,Perfluorohexanesulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,375951,PFNA,Perfluorononanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,68259121,PFNS,Perfluorononanesulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,335671,PFOA,Perfluorooctanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,1763231,PFOS,Perfluorooctanesulfonic acid,6.55,,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,754916,PFOSA,Perfluorooctanesulfonamide,0.992,UJ,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,2706903,PFPeA,Perfluoropentanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,2706914,PFPeS,Perfluoropentanesulfonic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,376067,PFTA,Perfluorotetradecanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,72629948,PFTrDA,Perfluorotridecanoic acid,0.992,U,ug/kg
+WURMW016,12/2/23,Soil,WUR10802,15,17,ft,N,WUR10802,VIAE,2312108-02,2058948,PFUnDA,Perfluoroundecanoic acid,0.992,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,375224,PFBA,Perfluorobutanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,375735,PFBS,Perfluorobutanesulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,335762,PFDA,Perfluorodecanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,307551,PFDoA,Perfluorododecanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,335773,PFDS,Perfluorodecanesulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,375859,PFHpA,Perfluoroheptanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,375928,PFHpS,Perfluoroheptanesulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,307244,PFHxA,Perfluorohexanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,355464,PFHxS,Perfluorohexanesulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,375951,PFNA,Perfluorononanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,68259121,PFNS,Perfluorononanesulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,335671,PFOA,Perfluorooctanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,1763231,PFOS,Perfluorooctanesulfonic acid,4.08,,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,754916,PFOSA,Perfluorooctanesulfonamide,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,2706903,PFPeA,Perfluoropentanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,2706914,PFPeS,Perfluoropentanesulfonic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,376067,PFTA,Perfluorotetradecanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,72629948,PFTrDA,Perfluorotridecanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10803,5,7,ft,N,WUR10803,VIAE,2312108-03,2058948,PFUnDA,Perfluoroundecanoic acid,0.973,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,375224,PFBA,Perfluorobutanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,375735,PFBS,Perfluorobutanesulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,335762,PFDA,Perfluorodecanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,307551,PFDoA,Perfluorododecanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,335773,PFDS,Perfluorodecanesulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,375859,PFHpA,Perfluoroheptanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,375928,PFHpS,Perfluoroheptanesulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,307244,PFHxA,Perfluorohexanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,355464,PFHxS,Perfluorohexanesulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,375951,PFNA,Perfluorononanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,68259121,PFNS,Perfluorononanesulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,335671,PFOA,Perfluorooctanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,1763231,PFOS,Perfluorooctanesulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,754916,PFOSA,Perfluorooctanesulfonamide,0.984,UJ,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,2706903,PFPeA,Perfluoropentanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,2706914,PFPeS,Perfluoropentanesulfonic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,376067,PFTA,Perfluorotetradecanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,72629948,PFTrDA,Perfluorotridecanoic acid,0.984,U,ug/kg
+WURMW018,12/2/23,Soil,WUR10804,14,16,ft,N,WUR10804,VIAE,2312108-04,2058948,PFUnDA,Perfluoroundecanoic acid,0.984,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11700,0,0.5,ft,N,WUR11700,SGS Orlando,FA89252-10,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,375224,PFBA,Perfluorobutanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,375735,PFBS,Perfluorobutanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,335762,PFDA,Perfluorodecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,307551,PFDoA,Perfluorododecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,335773,PFDS,Perfluorodecanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,375859,PFHpA,Perfluoroheptanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,375928,PFHpS,Perfluoroheptanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,307244,PFHxA,Perfluorohexanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,355464,PFHxS,Perfluorohexanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,375951,PFNA,Perfluorononanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,68259121,PFNS,Perfluorononanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,335671,PFOA,Perfluorooctanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,1763231,PFOS,Perfluorooctanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,754916,PFOSA,Perfluorooctanesulfonamide,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,2706903,PFPeA,Perfluoropentanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,2706914,PFPeS,Perfluoropentanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,376067,PFTA,Perfluorotetradecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,72629948,PFTrDA,Perfluorotridecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11701,0.5,2,ft,N,WUR11701,SGS Orlando,FA89252-11,2058948,PFUnDA,Perfluoroundecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,375224,PFBA,Perfluorobutanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,375735,PFBS,Perfluorobutanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,335762,PFDA,Perfluorodecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,307551,PFDoA,Perfluorododecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,335773,PFDS,Perfluorodecanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,375859,PFHpA,Perfluoroheptanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,375928,PFHpS,Perfluoroheptanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,307244,PFHxA,Perfluorohexanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,355464,PFHxS,Perfluorohexanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,375951,PFNA,Perfluorononanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,68259121,PFNS,Perfluorononanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,335671,PFOA,Perfluorooctanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,1763231,PFOS,Perfluorooctanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,754916,PFOSA,Perfluorooctanesulfonamide,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,2706903,PFPeA,Perfluoropentanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,2706914,PFPeS,Perfluoropentanesulfonic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,376067,PFTA,Perfluorotetradecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,72629948,PFTrDA,Perfluorotridecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11702,2,4,ft,N,WUR11702,SGS Orlando,FA89252-12,2058948,PFUnDA,Perfluoroundecanoic acid,5.2,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,375224,PFBA,Perfluorobutanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,375735,PFBS,Perfluorobutanesulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,335762,PFDA,Perfluorodecanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,307551,PFDoA,Perfluorododecanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,335773,PFDS,Perfluorodecanesulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,375859,PFHpA,Perfluoroheptanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,375928,PFHpS,Perfluoroheptanesulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,307244,PFHxA,Perfluorohexanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,355464,PFHxS,Perfluorohexanesulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,375951,PFNA,Perfluorononanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,68259121,PFNS,Perfluorononanesulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,335671,PFOA,Perfluorooctanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,1763231,PFOS,Perfluorooctanesulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,754916,PFOSA,Perfluorooctanesulfonamide,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,2706903,PFPeA,Perfluoropentanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,2706914,PFPeS,Perfluoropentanesulfonic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,376067,PFTA,Perfluorotetradecanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,72629948,PFTrDA,Perfluorotridecanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11703,5,7,ft,N,WUR11703,SGS Orlando,FA89252-13,2058948,PFUnDA,Perfluoroundecanoic acid,5.5,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB012,9/22/21,Soil,WUR11704,14,16,ft,N,WUR11704,SGS Orlando,FA89252-14,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,375224,PFBA,Perfluorobutanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,375735,PFBS,Perfluorobutanesulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,335762,PFDA,Perfluorodecanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,307551,PFDoA,Perfluorododecanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,335773,PFDS,Perfluorodecanesulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,375859,PFHpA,Perfluoroheptanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,375928,PFHpS,Perfluoroheptanesulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,307244,PFHxA,Perfluorohexanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,355464,PFHxS,Perfluorohexanesulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,375951,PFNA,Perfluorononanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,68259121,PFNS,Perfluorononanesulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,335671,PFOA,Perfluorooctanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,1763231,PFOS,Perfluorooctanesulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,754916,PFOSA,Perfluorooctanesulfonamide,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,2706903,PFPeA,Perfluoropentanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,2706914,PFPeS,Perfluoropentanesulfonic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,376067,PFTA,Perfluorotetradecanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,72629948,PFTrDA,Perfluorotridecanoic acid,0.51,U,ug/kg
+WURSB012,12/1/21,Soil,WUR11704A,14,16,ft,N,WUR11704A,SGS Orlando,FA91252-8,2058948,PFUnDA,Perfluoroundecanoic acid,0.51,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,375224,PFBA,Perfluorobutanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,375735,PFBS,Perfluorobutanesulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,335762,PFDA,Perfluorodecanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,307551,PFDoA,Perfluorododecanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,335773,PFDS,Perfluorodecanesulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,375859,PFHpA,Perfluoroheptanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,375928,PFHpS,Perfluoroheptanesulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,307244,PFHxA,Perfluorohexanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,355464,PFHxS,Perfluorohexanesulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,375951,PFNA,Perfluorononanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,68259121,PFNS,Perfluorononanesulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,335671,PFOA,Perfluorooctanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,1763231,PFOS,Perfluorooctanesulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,754916,PFOSA,Perfluorooctanesulfonamide,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,2706903,PFPeA,Perfluoropentanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,2706914,PFPeS,Perfluoropentanesulfonic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,376067,PFTA,Perfluorotetradecanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,72629948,PFTrDA,Perfluorotridecanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,FD,WUR111006,SGS Orlando,FA89252-16,2058948,PFUnDA,Perfluoroundecanoic acid,5.5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11705,0,0.5,ft,N,WUR11705,SGS Orlando,FA89252-15,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,375224,PFBA,Perfluorobutanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,375735,PFBS,Perfluorobutanesulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,335762,PFDA,Perfluorodecanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,307551,PFDoA,Perfluorododecanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,335773,PFDS,Perfluorodecanesulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,375859,PFHpA,Perfluoroheptanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,375928,PFHpS,Perfluoroheptanesulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,307244,PFHxA,Perfluorohexanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,355464,PFHxS,Perfluorohexanesulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,375951,PFNA,Perfluorononanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,68259121,PFNS,Perfluorononanesulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,335671,PFOA,Perfluorooctanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,1763231,PFOS,Perfluorooctanesulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,754916,PFOSA,Perfluorooctanesulfonamide,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,2706903,PFPeA,Perfluoropentanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,2706914,PFPeS,Perfluoropentanesulfonic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,376067,PFTA,Perfluorotetradecanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,72629948,PFTrDA,Perfluorotridecanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11706,0.5,2,ft,N,WUR11706,SGS Orlando,FA89252-17,2058948,PFUnDA,Perfluoroundecanoic acid,5,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11707,2,4,ft,N,WUR11707,SGS Orlando,FA89252-18,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB013,9/22/21,Soil,WUR11708,5,7,ft,N,WUR11708,SGS Orlando,FA89252-19,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,375224,PFBA,Perfluorobutanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,375735,PFBS,Perfluorobutanesulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,335762,PFDA,Perfluorodecanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,307551,PFDoA,Perfluorododecanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,335773,PFDS,Perfluorodecanesulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,375859,PFHpA,Perfluoroheptanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,375928,PFHpS,Perfluoroheptanesulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,307244,PFHxA,Perfluorohexanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,355464,PFHxS,Perfluorohexanesulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,375951,PFNA,Perfluorononanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,68259121,PFNS,Perfluorononanesulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,335671,PFOA,Perfluorooctanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,1763231,PFOS,Perfluorooctanesulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,754916,PFOSA,Perfluorooctanesulfonamide,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,2706903,PFPeA,Perfluoropentanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,2706914,PFPeS,Perfluoropentanesulfonic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,376067,PFTA,Perfluorotetradecanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,72629948,PFTrDA,Perfluorotridecanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709,10,12,ft,N,WUR11709,SGS Orlando,FA91291-13,2058948,PFUnDA,Perfluoroundecanoic acid,0.54,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,375224,PFBA,Perfluorobutanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,375735,PFBS,Perfluorobutanesulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,335762,PFDA,Perfluorodecanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,307551,PFDoA,Perfluorododecanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,335773,PFDS,Perfluorodecanesulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,375859,PFHpA,Perfluoroheptanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,375928,PFHpS,Perfluoroheptanesulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,307244,PFHxA,Perfluorohexanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,355464,PFHxS,Perfluorohexanesulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,375951,PFNA,Perfluorononanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,68259121,PFNS,Perfluorononanesulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,335671,PFOA,Perfluorooctanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,1763231,PFOS,Perfluorooctanesulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,754916,PFOSA,Perfluorooctanesulfonamide,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,2706903,PFPeA,Perfluoropentanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,2706914,PFPeS,Perfluoropentanesulfonic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,376067,PFTA,Perfluorotetradecanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,72629948,PFTrDA,Perfluorotridecanoic acid,0.53,U,ug/kg
+WURSB013,12/2/21,Soil,WUR11709A,14,16,ft,N,WUR11709A,SGS Orlando,FA91291-14,2058948,PFUnDA,Perfluoroundecanoic acid,0.53,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,375224,PFBA,Perfluorobutanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,375735,PFBS,Perfluorobutanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,335762,PFDA,Perfluorodecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,307551,PFDoA,Perfluorododecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,335773,PFDS,Perfluorodecanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,375859,PFHpA,Perfluoroheptanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,375928,PFHpS,Perfluoroheptanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,307244,PFHxA,Perfluorohexanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,355464,PFHxS,Perfluorohexanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,375951,PFNA,Perfluorononanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,68259121,PFNS,Perfluorononanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,335671,PFOA,Perfluorooctanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,1763231,PFOS,Perfluorooctanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,754916,PFOSA,Perfluorooctanesulfonamide,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,2706903,PFPeA,Perfluoropentanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,2706914,PFPeS,Perfluoropentanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,376067,PFTA,Perfluorotetradecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,72629948,PFTrDA,Perfluorotridecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11710,0,0.5,ft,N,WUR11710,SGS Orlando,FA89252-20,2058948,PFUnDA,Perfluoroundecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11711,0.5,2,ft,N,WUR11711,SGS Orlando,FA89252-21,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11712,2,4,ft,N,WUR11712,SGS Orlando,FA89252-22,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11713,5,7,ft,N,WUR11713,SGS Orlando,FA89252-23,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,375224,PFBA,Perfluorobutanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,375735,PFBS,Perfluorobutanesulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,335762,PFDA,Perfluorodecanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,307551,PFDoA,Perfluorododecanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,335773,PFDS,Perfluorodecanesulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,375859,PFHpA,Perfluoroheptanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,375928,PFHpS,Perfluoroheptanesulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,307244,PFHxA,Perfluorohexanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,355464,PFHxS,Perfluorohexanesulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,375951,PFNA,Perfluorononanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,68259121,PFNS,Perfluorononanesulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,335671,PFOA,Perfluorooctanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,1763231,PFOS,Perfluorooctanesulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,754916,PFOSA,Perfluorooctanesulfonamide,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,2706903,PFPeA,Perfluoropentanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,2706914,PFPeS,Perfluoropentanesulfonic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,376067,PFTA,Perfluorotetradecanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,72629948,PFTrDA,Perfluorotridecanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714,10,12,ft,N,WUR11714,SGS Orlando,FA89252-24,2058948,PFUnDA,Perfluoroundecanoic acid,5.5,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,375224,PFBA,Perfluorobutanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,375735,PFBS,Perfluorobutanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,335762,PFDA,Perfluorodecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,307551,PFDoA,Perfluorododecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,335773,PFDS,Perfluorodecanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,375859,PFHpA,Perfluoroheptanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,375928,PFHpS,Perfluoroheptanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,307244,PFHxA,Perfluorohexanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,355464,PFHxS,Perfluorohexanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,375951,PFNA,Perfluorononanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,68259121,PFNS,Perfluorononanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,335671,PFOA,Perfluorooctanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,1763231,PFOS,Perfluorooctanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,754916,PFOSA,Perfluorooctanesulfonamide,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,2706903,PFPeA,Perfluoropentanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,2706914,PFPeS,Perfluoropentanesulfonic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,376067,PFTA,Perfluorotetradecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,72629948,PFTrDA,Perfluorotridecanoic acid,5.2,U,ug/kg
+WURSB014,9/22/21,Soil,WUR11714A,14,16,ft,N,WUR11714A,SGS Orlando,FA89252-25,2058948,PFUnDA,Perfluoroundecanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11715,0,0.5,ft,N,WUR11715,SGS Orlando,FA89345-1,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,FD,WUR111007,SGS Orlando,FA89345-3,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,375224,PFBA,Perfluorobutanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,375735,PFBS,Perfluorobutanesulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,335762,PFDA,Perfluorodecanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,307551,PFDoA,Perfluorododecanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,335773,PFDS,Perfluorodecanesulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,375859,PFHpA,Perfluoroheptanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,375928,PFHpS,Perfluoroheptanesulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,307244,PFHxA,Perfluorohexanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,355464,PFHxS,Perfluorohexanesulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,375951,PFNA,Perfluorononanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,68259121,PFNS,Perfluorononanesulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,335671,PFOA,Perfluorooctanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,1763231,PFOS,Perfluorooctanesulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,754916,PFOSA,Perfluorooctanesulfonamide,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,2706903,PFPeA,Perfluoropentanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,2706914,PFPeS,Perfluoropentanesulfonic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,376067,PFTA,Perfluorotetradecanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,72629948,PFTrDA,Perfluorotridecanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11716,0.5,2,ft,N,WUR11716,SGS Orlando,FA89345-2,2058948,PFUnDA,Perfluoroundecanoic acid,5.2,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11717,2,4,ft,N,WUR11717,SGS Orlando,FA89345-4,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11718,5,7,ft,N,WUR11718,SGS Orlando,FA89345-6,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,375224,PFBA,Perfluorobutanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,375735,PFBS,Perfluorobutanesulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,335762,PFDA,Perfluorodecanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,307551,PFDoA,Perfluorododecanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,335773,PFDS,Perfluorodecanesulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,375859,PFHpA,Perfluoroheptanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,375928,PFHpS,Perfluoroheptanesulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,307244,PFHxA,Perfluorohexanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,355464,PFHxS,Perfluorohexanesulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,375951,PFNA,Perfluorononanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,68259121,PFNS,Perfluorononanesulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,335671,PFOA,Perfluorooctanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,1763231,PFOS,Perfluorooctanesulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,754916,PFOSA,Perfluorooctanesulfonamide,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,2706903,PFPeA,Perfluoropentanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,2706914,PFPeS,Perfluoropentanesulfonic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,376067,PFTA,Perfluorotetradecanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,72629948,PFTrDA,Perfluorotridecanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719,10,12,ft,N,WUR11719,SGS Orlando,FA89345-7,2058948,PFUnDA,Perfluoroundecanoic acid,5.6,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB015,9/25/21,Soil,WUR11719A,14,16,ft,N,WUR11719A,SGS Orlando,FA89345-8,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,375224,PFBA,Perfluorobutanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,375735,PFBS,Perfluorobutanesulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,335762,PFDA,Perfluorodecanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,307551,PFDoA,Perfluorododecanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,335773,PFDS,Perfluorodecanesulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,375859,PFHpA,Perfluoroheptanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,375928,PFHpS,Perfluoroheptanesulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,307244,PFHxA,Perfluorohexanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,355464,PFHxS,Perfluorohexanesulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,375951,PFNA,Perfluorononanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,68259121,PFNS,Perfluorononanesulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,335671,PFOA,Perfluorooctanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,1763231,PFOS,Perfluorooctanesulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,754916,PFOSA,Perfluorooctanesulfonamide,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,2706903,PFPeA,Perfluoropentanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,2706914,PFPeS,Perfluoropentanesulfonic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,376067,PFTA,Perfluorotetradecanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,72629948,PFTrDA,Perfluorotridecanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11720,0,0.5,ft,N,WUR11720,SGS Orlando,FA89345-9,2058948,PFUnDA,Perfluoroundecanoic acid,5.4,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11721,0.5,2,ft,N,WUR11721,SGS Orlando,FA89345-10,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11722,2,4,ft,N,WUR11722,SGS Orlando,FA89345-11,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11723,5,7,ft,N,WUR11723,SGS Orlando,FA89345-12,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,375224,PFBA,Perfluorobutanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,375735,PFBS,Perfluorobutanesulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,335762,PFDA,Perfluorodecanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,307551,PFDoA,Perfluorododecanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,335773,PFDS,Perfluorodecanesulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,375859,PFHpA,Perfluoroheptanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,375928,PFHpS,Perfluoroheptanesulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,307244,PFHxA,Perfluorohexanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,355464,PFHxS,Perfluorohexanesulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,375951,PFNA,Perfluorononanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,68259121,PFNS,Perfluorononanesulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,335671,PFOA,Perfluorooctanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,1763231,PFOS,Perfluorooctanesulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,754916,PFOSA,Perfluorooctanesulfonamide,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,2706903,PFPeA,Perfluoropentanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,2706914,PFPeS,Perfluoropentanesulfonic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,376067,PFTA,Perfluorotetradecanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,72629948,PFTrDA,Perfluorotridecanoic acid,5.5,U,ug/kg
+WURSB016,9/25/21,Soil,WUR11724,10,12,ft,N,WUR11724,SGS Orlando,FA89345-13,2058948,PFUnDA,Perfluoroundecanoic acid,5.5,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,375224,PFBA,Perfluorobutanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,375735,PFBS,Perfluorobutanesulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,335762,PFDA,Perfluorodecanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,307551,PFDoA,Perfluorododecanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,335773,PFDS,Perfluorodecanesulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,375859,PFHpA,Perfluoroheptanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,375928,PFHpS,Perfluoroheptanesulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,307244,PFHxA,Perfluorohexanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,355464,PFHxS,Perfluorohexanesulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,375951,PFNA,Perfluorononanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,68259121,PFNS,Perfluorononanesulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,335671,PFOA,Perfluorooctanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,1763231,PFOS,Perfluorooctanesulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,754916,PFOSA,Perfluorooctanesulfonamide,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,2706903,PFPeA,Perfluoropentanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,2706914,PFPeS,Perfluoropentanesulfonic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,376067,PFTA,Perfluorotetradecanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,72629948,PFTrDA,Perfluorotridecanoic acid,0.57,U,ug/kg
+WURSB016,12/1/21,Soil,WUR11724A,14,16,ft,N,WUR11724A,SGS Orlando,FA91252-7,2058948,PFUnDA,Perfluoroundecanoic acid,0.57,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,375224,PFBA,Perfluorobutanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,375735,PFBS,Perfluorobutanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,335762,PFDA,Perfluorodecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,307551,PFDoA,Perfluorododecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,335773,PFDS,Perfluorodecanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,375859,PFHpA,Perfluoroheptanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,375928,PFHpS,Perfluoroheptanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,307244,PFHxA,Perfluorohexanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,355464,PFHxS,Perfluorohexanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,375951,PFNA,Perfluorononanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,68259121,PFNS,Perfluorononanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,335671,PFOA,Perfluorooctanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,1763231,PFOS,Perfluorooctanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,754916,PFOSA,Perfluorooctanesulfonamide,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,2706903,PFPeA,Perfluoropentanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,2706914,PFPeS,Perfluoropentanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,376067,PFTA,Perfluorotetradecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,72629948,PFTrDA,Perfluorotridecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11725,0,0.5,ft,N,WUR11725,SGS Orlando,FA89345-15,2058948,PFUnDA,Perfluoroundecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,FD,WUR111008,SGS Orlando,FA89345-17,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,375224,PFBA,Perfluorobutanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,375735,PFBS,Perfluorobutanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,335762,PFDA,Perfluorodecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,307551,PFDoA,Perfluorododecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,335773,PFDS,Perfluorodecanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,375859,PFHpA,Perfluoroheptanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,375928,PFHpS,Perfluoroheptanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,307244,PFHxA,Perfluorohexanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,355464,PFHxS,Perfluorohexanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,375951,PFNA,Perfluorononanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,68259121,PFNS,Perfluorononanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,335671,PFOA,Perfluorooctanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,1763231,PFOS,Perfluorooctanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,754916,PFOSA,Perfluorooctanesulfonamide,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,2706903,PFPeA,Perfluoropentanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,2706914,PFPeS,Perfluoropentanesulfonic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,376067,PFTA,Perfluorotetradecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,72629948,PFTrDA,Perfluorotridecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11726,0.5,2,ft,N,WUR11726,SGS Orlando,FA89345-16,2058948,PFUnDA,Perfluoroundecanoic acid,5.3,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,375224,PFBA,Perfluorobutanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,375735,PFBS,Perfluorobutanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,335762,PFDA,Perfluorodecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,307551,PFDoA,Perfluorododecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,335773,PFDS,Perfluorodecanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,375859,PFHpA,Perfluoroheptanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,375928,PFHpS,Perfluoroheptanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,307244,PFHxA,Perfluorohexanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,355464,PFHxS,Perfluorohexanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,375951,PFNA,Perfluorononanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,68259121,PFNS,Perfluorononanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,335671,PFOA,Perfluorooctanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,1763231,PFOS,Perfluorooctanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,754916,PFOSA,Perfluorooctanesulfonamide,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,2706903,PFPeA,Perfluoropentanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,2706914,PFPeS,Perfluoropentanesulfonic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,376067,PFTA,Perfluorotetradecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,72629948,PFTrDA,Perfluorotridecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11727,2,4,ft,N,WUR11727,SGS Orlando,FA89345-18,2058948,PFUnDA,Perfluoroundecanoic acid,5.4,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,375224,PFBA,Perfluorobutanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,375735,PFBS,Perfluorobutanesulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,335762,PFDA,Perfluorodecanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,307551,PFDoA,Perfluorododecanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,335773,PFDS,Perfluorodecanesulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,375859,PFHpA,Perfluoroheptanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,375928,PFHpS,Perfluoroheptanesulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,307244,PFHxA,Perfluorohexanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,355464,PFHxS,Perfluorohexanesulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,375951,PFNA,Perfluorononanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,68259121,PFNS,Perfluorononanesulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,335671,PFOA,Perfluorooctanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,1763231,PFOS,Perfluorooctanesulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,754916,PFOSA,Perfluorooctanesulfonamide,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,2706903,PFPeA,Perfluoropentanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,2706914,PFPeS,Perfluoropentanesulfonic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,376067,PFTA,Perfluorotetradecanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,72629948,PFTrDA,Perfluorotridecanoic acid,5.1,U,ug/kg
+WURSB017,9/25/21,Soil,WUR11728,5,7,ft,N,WUR11728,SGS Orlando,FA89345-19,2058948,PFUnDA,Perfluoroundecanoic acid,5.1,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,757124724,4_2_FTS,4:2 fluorotelomer sulfonate,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,27619972,6_2_FTS,6:2 Fluorotelomer sulfonic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,39108344,8_2_FTS,8:2 Fluorotelomer sulfonic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,2991506,EtFOSAA,N-ethylperfluorooctane sulfonamidoacetic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,2355319,MeFOSAA,2-(N-Methylperfluorooctanesulfonamido)acetic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,375224,PFBA,Perfluorobutanoic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,375735,PFBS,Perfluorobutanesulfonic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,335762,PFDA,Perfluorodecanoic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,307551,PFDoA,Perfluorododecanoic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,335773,PFDS,Perfluorodecanesulfonic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,375859,PFHpA,Perfluoroheptanoic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,375928,PFHpS,Perfluoroheptanesulfonic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,307244,PFHxA,Perfluorohexanoic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,355464,PFHxS,Perfluorohexanesulfonic acid,0.56,U,ug/kg
+WURSB017,12/1/21,Soil,WUR11729,10,12,ft,N,WUR11729,SGS Orlando,FA91252-5,375951,PFNA,Perfluorononanoic acid,0.56,U,ug/kg
