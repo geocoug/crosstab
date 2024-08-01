@@ -232,7 +232,7 @@ class Crosstab:
         """  # noqa: E501
         if self.keep_sqlite:
             sqlite_file = self.outxlsx.with_suffix(".sqlite")
-            logger.debug(f"Creating SQLite database file: {sqlite_file}.")
+            logger.info(f"Creating SQLite database file: {sqlite_file}.")
             if sqlite_file.exists():
                 sqlite_file.unlink()
             conn = sqlite3.connect(sqlite_file)
@@ -257,8 +257,7 @@ class Crosstab:
 
         The crosstab table will be written to the output XLSX file. The table will have row headers, column headers, and value columns as specified in the `row_headers`, `col_headers`, and `value_cols` arguments. The table will be written to a sheet named *Crosstab*. If the `keep_src` argument is `True`, a sheet named *Source Data* will be created with the source data from the input CSV file. A sheet named *README* will be created with metadata about the crosstab process. The metadata will include the creation time, user, script version, input file, output file, and SQLite file (if the `keep_sqlite` argument is `True`). Both the *README* and *Crosstab* sheets will be styled to make the table easier to read.
         """  # noqa: E501
-        logger.debug("Starting crosstab routine.")
-
+        logger.info(f"Creating crosstab table from {self.incsv}.")
         # Get list of unique values for each row header
         logger.debug("Getting list of unique values for each row header.")
         with self.conn:
@@ -451,7 +450,7 @@ class Crosstab:
                 for row in cursor.fetchall():
                     src_data.append(row)
 
-        logger.debug(f"Saving the workbook to {self.outxlsx}.")
+        logger.info(f"Saving output to {self.outxlsx}.")
         wb.save(self.outxlsx)
 
 
