@@ -17,7 +17,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
 ]
-dependencies = []
+dependencies = ["openpyxl==3.1.5"]
 keywords = [
     "crosstab",
     "xtab",
