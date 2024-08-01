@@ -15,7 +15,6 @@ Go from this:
 To this:
 
 ![Crosstab Output](https://raw.githubusercontent.com/geocoug/crosstab/main/crosstab-output.png)
-![Crosstab Metadata](https://raw.githubusercontent.com/geocoug/crosstab/main/crosstab-metadata.png)
 
 ## Installation
 
@@ -47,9 +46,9 @@ from crosstab import Crosstab
 Crosstab(
     incsv=Path("data.csv"),
     outxlsx=Path("crosstabbed_data.xlsx"),
-    row_headers=("location_id", "sample_id", "sample_date"),
-    col_headers=("parameter", "cas_rn"),
-    value_cols=("result", "unit", "qualifiers"),
+    row_headers=("location", "sample"),
+    col_headers=("cas_rn", "parameter"),
+    value_cols=("concentration", "units"),
     keep_sqlite=True,
     keep_src=True,
 ).crosstab()
@@ -58,11 +57,11 @@ Crosstab(
 ### Command Line
 
 ```bash
-crosstab -k -s -f data.csv -o crosstabbed_data.xlsx -r location_id sample_id sample_date -c parameter cas_rn -v result unit qualifiers
+crosstab -k -s -f data.csv -o crosstabbed_data.xlsx -r location sample -c cas_rn parameter -v concentration units
 ```
 
 ### Docker
 
 ```bash
-docker run --rm -v $(pwd):/data ghcr.io/geocoug/crosstab:latest -k -s -f /data/data.csv -o /data/crosstabbed_data.xlsx -r location_id sample_id sample_date -c parameter cas_rn -v result unit qualifiers
+docker run --rm -v $(pwd):/data ghcr.io/geocoug/crosstab:latest -k -s -f /data/data.csv -o /data/crosstabbed_data.xlsx -r location sample -c cas_rn parameter -v concentration units
 ```

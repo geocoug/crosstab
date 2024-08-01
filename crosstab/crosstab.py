@@ -116,16 +116,15 @@ class Crosstab:
 
         Args:
             incsv (Path): Path to the input CSV file.
-            outxlsx (Path): Path to the output XLSX file.
-            row_headers (tuple): Tuple of column headers to use as row headers.
-            col_headers (tuple): Tuple of column headers to use as column headers.
-            value_cols (tuple): Tuple of column headers to use as value columns.
-            keep_sqlite (bool, optional): Keep the SQLite database file. Defaults to False.
-            keep_src (bool, optional): Keep the raw data sheet in the output file. Defaults
-                to False.
+            outxlsx (Path): Path to the output XLSX file. The output file will contain at a minimum two sheets: one containing metadata about the crosstab and one containing the crosstab table. If the keep_src argument is True, the output file will contain a third sheet with the source data.
+            row_headers (tuple): Tuple of one or more column names to use as row headers. Unique values of these columns will appear at the beginning of every output line.
+            col_headers (tuple): Tuple of one or more column names to use as column headers in the output. A crosstab column (or columns) will be created for every unique combination of values of these fields in the input.
+            value_cols (tuple): Tuple of one or more column names with values to be used to fill the cells of the cross-table. If n columns names are specified, then there will be n columns in the output table for each of the column headers corresponding to values of the -c argument. The column names specified with the -v argument will be appended to the output column headers created from values of the -c argument. There should be only one value of the -v column(s) for each combination of the -r and -c columns; if there is more than one, a warning will be printed and only the first value will appear in the output. (That is, values are not combined in any way when there are multiple values for each output cell.)
+            keep_sqlite (bool, optional): Keep the temporary SQLite database file. The default is to delete it after the output file is created. The SQLite file is created in the same directory as the output file with the name of the output file (but with a .sqlite extension) and a single table named 'data'. Defaults to False.
+            keep_src (bool, optional): Keep a sheet with the source data in the output file. The sheet will be named 'Source Data'. Defaults to False.
 
         Raises:
-            ValueError: Raised if the input file does not exist, is not a file, is empty, is not a CSV file, or if the row_headers, col_headers, or value_cols are not specified.
+            ValueError: Raised if the input file does not exist, is not a file, is empty, is not a CSV file, or if the row_headers, col_headers, or value_cols are not specified. Also raised if the output file does not have an XLSX extension.
 
         Example:
 
@@ -254,7 +253,10 @@ class Crosstab:
         return conn
 
     def crosstab(self: Crosstab) -> None:
-        """Create a crosstab table from the input CSV file."""
+        """Create a crosstab table from the input CSV file.
+
+        The crosstab table will be written to the output XLSX file. The table will have row headers, column headers, and value columns as specified in the `row_headers`, `col_headers`, and `value_cols` arguments. The table will be written to a sheet named *Crosstab*. If the `keep_src` argument is `True`, a sheet named *Source Data* will be created with the source data from the input CSV file. A sheet named *README* will be created with metadata about the crosstab process. The metadata will include the creation time, user, script version, input file, output file, and SQLite file (if the `keep_sqlite` argument is `True`). Both the *README* and *Crosstab* sheets will be styled to make the table easier to read.
+        """  # noqa: E501
         logger.debug("Starting crosstab routine.")
 
         # Get list of unique values for each row header
@@ -495,7 +497,7 @@ def clparser() -> argparse.ArgumentParser:
         "-s",
         "--keep-src",
         action="store_true",
-        help="keep a sheet with the raw data in the output file. The default is to not include the raw data in the output file.",  # noqa: E501
+        help="keep a sheet with the source data in the output file. The default is to not include the source data in the output file.",  # noqa: E501
     )
     parser.add_argument(
         "-f",
