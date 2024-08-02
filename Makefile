@@ -1,7 +1,6 @@
 VENV = .venv
 BIN = $(VENV)/bin
 PYTHON = $(BIN)/python
-PIP = $(BIN)/pip
 TEST = pytest
 
 # Self documenting commands
@@ -12,10 +11,13 @@ help: ## show this help
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%s\033[0m|%s\n", $$1, $$2}' \
 	| column -t -s '|'
 
-$(VENV)/bin/activate: requirements.txt
-	python3 -m venv .venv
-	$(PIP) install -U pip
-	$(PIP) install -r requirements.txt
+$(BIN)/activate: requirements.txt
+	uv venv
+	source $(BIN)/activate && uv pip install -r requirements.txt
+
+init: ## Initialize the project environment (venv & pre-commit)
+	@$(MAKE) $(BIN)/activate
+	@$(MAKE) update
 
 clean: ## Remove temporary files
 	@rm -rf .ipynb_checkpoints
@@ -30,7 +32,6 @@ clean: ## Remove temporary files
 	@rm -rf build
 	@rm -rf dist
 	@rm -rf *.egg-info
-	@rm -rf pg_upsert.log
 	@rm -rf site/
 	@rm -rf .mypy_cache
 	@rm -rf *.xlsx
@@ -39,48 +40,55 @@ clean: ## Remove temporary files
 bump: ## Show the next version
 	@bump-my-version show-bump
 
-bump-patch: $(VENV)/bin/activate ## Bump patch version
+bump-patch: $(BIN)/activate ## Bump patch version
 	@printf "Applying patch bump\n"
 	@$(BIN)/bump-my-version bump patch
 	@$(MAKE) bump
 
-bump-minor: $(VENV)/bin/activate ## Bump minor version
+bump-minor: $(BIN)/activate ## Bump minor version
 	@printf "Applying minor bump\n"
 	@$(BIN)/bump-my-version bump minor
 	@$(MAKE) bump
 
-bump-major: $(VENV)/bin/activate ## Bump major version
+bump-major: $(BIN)/activate ## Bump major version
 	@printf "Applying major bump\n"
 	@$(BIN)/bump-my-version bump major
 	@$(MAKE) bump
 
-update: $(VENV)/bin/activate ## Update pip and pre-commit
-	$(PIP) install -U pip
+update: $(BIN)/activate ## Update pip and pre-commit
 	$(PYTHON) -m pre_commit autoupdate
 
-lint: $(VENV)/bin/activate ## Run pre-commit hooks
+lint: $(BIN)/activate ## Run pre-commit hooks
 	$(PYTHON) -m pre_commit install --install-hooks
 	$(PYTHON) -m pre_commit run --all-files
 
-test: $(VENV)/bin/activate ## Run unit tests
+test: $(BIN)/activate ## Run unit tests
 	$(PYTHON) -m $(TEST)
 
-build-dist: $(VENV)/bin/activate ## Generate distribution packages
+build-dist: $(BIN)/activate ## Generate distribution packages
 	$(PYTHON) -m build
 
-build-docs: $(VENV)/bin/activate ## Generate documentation
+build-docker: ## Build the docker image
+	@docker build -t crosstab .
+
+build-docs: $(BIN)/activate ## Generate documentation
 	@printf "Building documentation\n"
 	@mkdocs build -c -q
+	@open site/index.html
 
-publish: $(VENV)/bin/activate ## Publish to PyPI
+preview-docs: $(BIN)/activate ## Serve documentation
+	@mkdocs serve -w .
+
+publish: $(BIN)/activate ## Publish to PyPI
 	$(MAKE) lint
 	$(MAKE) test
 	$(MAKE) build-dist
 	$(PYTHON) -m twine upload --repository pypi dist/*
 	$(MAKE) clean
 
-build: $(VENV)/bin/activate ## Build the project
+build: $(BIN)/activate ## Build the project
 	$(MAKE) lint
 	$(MAKE) test
 	$(MAKE) build-dist
+	$(MAKE) build-docker
 	$(MAKE) build-docs
