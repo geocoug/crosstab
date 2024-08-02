@@ -19,7 +19,7 @@ repos:
       - id: gitleaks
   # Spell check
   - repo: https://github.com/crate-ci/typos
-    rev: v1.22.9
+    rev: v1.23.6
     hooks:
       - id: typos
   # Supported base hooks
@@ -51,7 +51,7 @@ repos:
   # Lint and format Python files
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.
-    rev: v0.5.3
+    rev: v0.5.6
     hooks:
       # Run the Ruff linter.
       - id: ruff
@@ -61,6 +61,6 @@ repos:
         args: [--config=pyproject.toml]
   # Mypy static type checker
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.10.1
+    rev: v1.11.1
     hooks:
       - id: mypy
