@@ -1,7 +1,7 @@
 # crosstab
 
 [![ci/cd](https://github.com/geocoug/crosstab/actions/workflows/ci-cd.yaml/badge.svg)](https://github.com/geocoug/crosstab/actions/workflows/ci-cd.yaml)
-[![Documentation Status](https://readthedocs.org/projects/pg-upsert/badge/?version=latest)](https://pg-upsert.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/crosstab/badge/?version=latest)](https://crosstab.readthedocs.io/en/latest/?badge=latest)
 [![PyPI Latest Release](https://img.shields.io/pypi/v/crosstab.svg)](https://pypi.org/project/crosstab/)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/crosstab.svg?label=pypi%20downloads)](https://pypi.org/project/crosstab/)
 [![Python Version Support](https://img.shields.io/pypi/pyversions/crosstab.svg)](https://pypi.org/project/crosstab/)
