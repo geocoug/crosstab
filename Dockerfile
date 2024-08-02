@@ -10,10 +10,10 @@ RUN apt-get update -y \
     && apt-get install -y wget \
     && rm -rf /var/lib/apt/lists/*
 
-ADD --chmod=755 https://astral.sh/uv/install.sh /install.sh
+ADD --chmod=755 https://astral.sh/uv/install.sh /tmp/install.sh
 
-RUN /install.sh \
-    && rm /install.sh
+RUN /tmp/install.sh \
+    && rm /tmp/install.sh
 
 COPY ./requirements.txt /tmp/requirements.txt
 
