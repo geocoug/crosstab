@@ -181,8 +181,8 @@ class Crosstab:
         self._validate_args()
         with open(self.incsv) as f:
             self.dialect = csv.Sniffer().sniff(f.readline())
+        self.csv_columns = next(self._csv_reader())
         self.csv_reader = self._csv_reader()
-        self.csv_columns = next(self.csv_reader)
         self._validate_csv_headers()
         self.conn = self._csv_to_sqlite()
 
@@ -321,7 +321,6 @@ class Crosstab:
             cursor = self.conn.cursor()
             cursor.execute(f"SELECT DISTINCT {', '.join(self.col_headers)} FROM data;")
             col_header_vals = cursor.fetchall()
-
         logger.debug("Writing crosstab table.")
         # Write the column headers. If multiple column headers are specified, write them in separate rows.
         # Space out each column by the number of value_cols specified.
