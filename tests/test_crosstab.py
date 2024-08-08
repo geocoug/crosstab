@@ -135,14 +135,14 @@ def test_crosstab_rows_single_value_column(temp_csv_file, temp_xlsx_file):
     """Test that values are correctly placed in the crosstab with one value column."""
     Crosstab(
         incsv=temp_csv_file,
-        outxlsx=Path("test.xlsx"),
+        outxlsx=temp_xlsx_file,
         row_headers=("header1",),
         col_headers=("header2", "header3"),
         value_cols=("value",),
         keep_sqlite=False,
         keep_src=True,
     ).crosstab()
-    wb = openpyxl.load_workbook(Path("test.xlsx"))
+    wb = openpyxl.load_workbook(temp_xlsx_file)
     ws = wb["Crosstab"]
     # Check the row headers
     assert ws["A1"].value == "header2"
@@ -179,14 +179,14 @@ def test_crosstab_rows_multi_value_column(temp_csv_file, temp_xlsx_file):
     """Test that values are correctly placed in the crosstab with multiple value columns."""
     Crosstab(
         incsv=temp_csv_file,
-        outxlsx=Path("test.xlsx"),
+        outxlsx=Path(temp_xlsx_file),
         row_headers=("header1",),
         col_headers=("header2", "header3"),
         value_cols=("value", "unit"),
         keep_sqlite=False,
         keep_src=True,
     ).crosstab()
-    wb = openpyxl.load_workbook(Path("test.xlsx"))
+    wb = openpyxl.load_workbook(temp_xlsx_file)
     ws = wb["Crosstab"]
     # Check the row headers
     assert ws["A1"].value == "header2"
