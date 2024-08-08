@@ -55,7 +55,7 @@ bump-major: $(BIN)/activate ## Bump major version
 	@$(BIN)/bump-my-version bump major
 	@$(MAKE) bump
 
-update: $(BIN)/activate ## Update pip and pre-commit
+update: $(BIN)/activate ## Update pre-commit hooks
 	$(PYTHON) -m pre_commit autoupdate
 
 lint: $(BIN)/activate ## Run pre-commit hooks
