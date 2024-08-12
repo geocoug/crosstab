@@ -34,8 +34,8 @@ clean: ## Remove temporary files
 	@rm -rf *.egg-info
 	@rm -rf site/
 	@rm -rf .mypy_cache
-	@rm -rf *.xlsx
-	@rm -rf *.sqlite
+	@rm -rf **/**/*.xlsx
+	@rm -rf **/**/*.sqlite
 
 bump: ## Show the next version
 	@bump-my-version show-bump

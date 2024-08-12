@@ -16,7 +16,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
 ]
-dependencies = ["openpyxl==3.1.5"]
+dependencies = ["openpyxl"]
 keywords = [
     "crosstab",
     "xtab",
@@ -32,7 +32,7 @@ keywords = [
 crosstab = "crosstab.crosstab:cli"
 
 [tool.setuptools.dynamic]
-version = { attr = "crosstab._version.__version__" }
+version = { attr = "crosstab.crosstab.__version__" }
 
 [project.urls]
 Homepage = "https://crosstab.readthedocs.io"
@@ -121,4 +121,4 @@ commit_args = "--no-verify"
 tag = true
 
 [[tool.bumpversion.files]]
-filename = "crosstab/_version.py"
+filename = "crosstab/crosstab.py"

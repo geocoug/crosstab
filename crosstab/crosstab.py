@@ -18,7 +18,13 @@ from openpyxl.styles import Border, Color, Font, NamedStyle, PatternFill, Side
 from openpyxl.styles.alignment import Alignment
 from openpyxl.utils.cell import get_column_letter
 
-from ._version import __description__, __version__
+__title__ = "crosstab"
+__author__ = "Caleb Grant"
+__url__ = "https://github.com/geocoug/crosstab"
+__author_email__ = "grantcaleb22@gmail.com"
+__license__ = "GNU GPLv3"
+__version__ = "0.0.11"
+__description__ = "Rearrange data from a normalized CSV format to a crosstabulated format, with styling."
 
 logging.basicConfig(
     level=logging.INFO,
@@ -105,10 +111,10 @@ class Crosstab:
     def __init__(
         self: Crosstab,
         incsv: Path,
-        outxlsx: Path,
         row_headers: tuple,
         col_headers: tuple,
         value_cols: tuple,
+        outxlsx: Path | None = None,
         keep_sqlite: bool = False,
         keep_src: bool = False,
     ) -> None:
@@ -116,11 +122,11 @@ class Crosstab:
 
         Args:
             incsv (Path): Path to the input CSV file.
-            outxlsx (Path): Path to the output XLSX file. The output file will contain at a minimum two sheets: one containing metadata about the crosstab and one containing the crosstab table. If the keep_src argument is True, the output file will contain a third sheet with the source data.
+            outxlsx (Path, optional): Path to the output XLSX file. The output file will contain at a minimum two sheets: one containing metadata about the crosstab and one containing the crosstab table. If the keep_src argument is True, the output file will contain a third sheet with the source data. If no output file is specified, the output will be written in the same directory as the input file, with the same name as the input file, appended with "_crosstab" and an XLSX extension. Defaults to None.
             row_headers (tuple): Tuple of one or more column names to use as row headers. Unique values of these columns will appear at the beginning of every output line.
             col_headers (tuple): Tuple of one or more column names to use as column headers in the output. A crosstab column (or columns) will be created for every unique combination of values of these fields in the input.
             value_cols (tuple): Tuple of one or more column names with values to be used to fill the cells of the cross-table. If n columns names are specified, then there will be n columns in the output table for each of the column headers corresponding to values of the -c argument. The column names specified with the -v argument will be appended to the output column headers created from values of the -c argument. There should be only one value of the -v column(s) for each combination of the -r and -c columns; if there is more than one, a warning will be printed and only the first value will appear in the output. (That is, values are not combined in any way when there are multiple values for each output cell.)
-            keep_sqlite (bool, optional): Keep the temporary SQLite database file. The default is to delete it after the output file is created. The SQLite file is created in the same directory as the output file with the name of the output file (but with a .sqlite extension) and a single table named 'data'. Defaults to False.
+            keep_sqlite (bool, optional): Keep the temporary SQLite database file. The default is to delete it after the output file is created. The SQLite file is created in the same directory as the input file with the name of the input file (but with a .sqlite extension) and a single table named 'data'. Defaults to False.
             keep_src (bool, optional): Keep a sheet with the source data in the output file. The sheet will be named 'Source Data'. Defaults to False.
 
         Raises:
@@ -171,6 +177,8 @@ class Crosstab:
         ```
         """  # noqa: E501
         self.incsv = incsv
+        if not outxlsx:
+            outxlsx = incsv.with_name(incsv.stem + "_crosstab.xlsx")
         self.outxlsx = outxlsx
         self.row_headers = row_headers
         self.col_headers = col_headers
@@ -231,7 +239,7 @@ class Crosstab:
         If the keep_sqlite attribute is True, the SQLite database file will be saved to disk. Otherwise, the database will be created in memory. The database will have a single table named 'data' with columns corresponding to the CSV file headers.
         """  # noqa: E501
         if self.keep_sqlite:
-            sqlite_file = self.outxlsx.with_suffix(".sqlite")
+            sqlite_file = self.incsv.with_suffix(".sqlite")
             logger.info(f"Creating SQLite database file: {sqlite_file}.")
             if sqlite_file.exists():
                 sqlite_file.unlink()
@@ -509,7 +517,7 @@ def clparser() -> argparse.ArgumentParser:
         "-o",
         metavar="OUTPUT_XLSX",
         dest="outxlsx",
-        required=True,
+        required=False,
         type=Path,
         help="output XLSX file",
     )
