@@ -551,8 +551,6 @@ def clparser() -> argparse.ArgumentParser:
 def cli() -> None:
     """Main command line entrypoint for the xtab function."""
     args = clparser().parse_args()
-    if args.log and args.log.exists():
-        args.log.unlink()
     if not args.quiet:
         logger.addHandler(logging.StreamHandler())
     if args.log:
