@@ -32,7 +32,7 @@ docker pull ghcr.io/geocoug/crosstab:latest
 
 ## Usage
 
-The following examples demonstrate how to use **crosstab** to crosstabulate a CSV file. By default, the output is an Excel file with two sheets: one that contains metadata about the crosstabulation (ie. who ran the script, when it was run, etc.) and another with the data crosstabulated. If the `keep_sqlite` parameter is set to `True`, the SQLite database used to store the source data is kept. The SQLite file will have the same basename as the output Excel file, but with a `.sqlite` extension. If the `keep_src` parameter is set to `True`, the source CSV data is copied to the Excel file as a third sheet.
+The following examples demonstrate how to use **crosstab** to crosstabulate a CSV file. By default, the output is an Excel file with two sheets: one that contains metadata about the crosstabulation (ie. who ran the script, when it was run, etc.) and another with the data crosstabulated. If the `keep_sqlite` parameter is set to `True`, the SQLite database used to store the source data is kept. The SQLite file will have the same basename as the input CSV file, but with a `.sqlite` extension. If the `keep_src` parameter is set to `True`, the source CSV data is copied to the Excel file as a third sheet.
 
 Each of the examples below will produce the exact same output.
 
