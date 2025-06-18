@@ -5,12 +5,13 @@ authors = [{ name = "Caleb Grant", email = "grantcaleb22@gmail.com" }]
 description = "Rearrange data from a normalized CSV format to a crosstabulated format, with styling."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { file = "LICENSE" }
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.14"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -28,6 +29,22 @@ keywords = [
     "table",
 ]
 
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "bump-my-version>=1.2.0",
+    "mkdocs>=1.6.1",
+    "mkdocstrings>=0.29.1",
+    "mkdocs-material>=9.6.14",
+    "pre-commit>=4.2.0",
+    "pytest-cov>=6.2.1",
+    "twine>=6.1.0",
+    "markdown-include>=0.8.1",
+    "mkdocstrings-python>=1.16.12",
+    "ruff>=0.12.0",
+    "tox-uv>=1.26.0",
+]
+
 [project.scripts]
 crosstab = "crosstab.crosstab:cli"
 
@@ -38,14 +55,6 @@ version = { attr = "crosstab.crosstab.__version__" }
 Homepage = "https://crosstab.readthedocs.io"
 Repository = "https://github.com/geocoug/crosstab"
 Issues = "https://github.com/geocoug/crosstab/issues"
-
-[tool.pytest.ini_options]
-addopts = ["--cov=crosstab", "-v"]
-testpaths = ["tests"]
-log_cli = true
-log_cli_level = "INFO"
-log_cli_format = "%(asctime)s - %(name)s - %(levelname)s: %(message)s"
-log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
@@ -122,3 +131,41 @@ tag = true
 
 [[tool.bumpversion.files]]
 filename = "crosstab/crosstab.py"
+
+[tool.pytest.ini_options]
+addopts = ["--cov=crosstab", "--cov=tests", "-ra", "--color=yes"]
+testpaths = ["tests"]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s - %(name)s - %(levelname)s: %(message)s"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+[tool.coverage.report]
+exclude_also = ["if __name__ == .__main__.:"]
+
+[tool.tox]
+required = ["tox>=4.24"]
+env_list = ["py310", "py311", "py312", "py313", "build", "docs"]
+skip_missing_interpreters = true
+isolated_build = true
+
+[tool.tox.env_run_base]
+description = "Run tests under {base_python}"
+deps = ["pytest-cov"]
+commands = [["pytest", "{posargs}"]]
+
+[tool.tox.env.docs]
+description = "Build documentation using MkDocs"
+deps = [
+    "mkdocs",
+    "mkdocstrings",
+    "mkdocstrings-python",
+    "mkdocs-material",
+    "markdown-include",
+]
+commands = [["mkdocs", "build", "-c", "-q"]]
+
+[tool.tox.env.build]
+description = "Build distribution packages"
+deps = ["tox-uv"]
+commands = [["uv", "build"]]

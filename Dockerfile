@@ -1,34 +1,30 @@
-FROM python:3.12-slim as staging
+FROM python:3.13-alpine AS builder
 
-ENV HOME=/app
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV UV_SYSTEM_PYTHON=1
 
-WORKDIR $HOME
+WORKDIR /tmp/build
 
-RUN apt-get update -y \
-    && apt-get install -y wget \
-    && rm -rf /var/lib/apt/lists/*
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+COPY ./pyproject.toml .
+COPY ./crosstab ./crosstab
 
-ADD --chmod=755 https://astral.sh/uv/install.sh /tmp/install.sh
+RUN /bin/uv pip install --no-cache /tmp/build
 
-RUN /tmp/install.sh \
-    && rm /tmp/install.sh
+FROM python:3.13-alpine AS final
 
-COPY ./requirements.txt /tmp/requirements.txt
+ENV PYTHONUNBUFFERED=1
 
-RUN $HOME/.cargo/bin/uv pip install --system --no-cache -r /tmp/requirements.txt \
-    && rm -rf /tmp/requirements.txt
+WORKDIR /app
 
-COPY ./crosstab $HOME/crosstab
+RUN apk add --no-cache tk ttf-dejavu fontconfig
 
-COPY ./pyproject.toml $HOME
+COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
 
-RUN $HOME/.cargo/bin/uv pip install --system --no-cache $HOME
-
-RUN addgroup --system app \
-    && adduser --system --group app \
-    && chown -R app:app $HOME
+RUN addgroup -S app \
+    && adduser -S -G app app \
+    && chown -R app:app /app
 
 USER app
 
