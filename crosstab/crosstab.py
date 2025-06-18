@@ -398,13 +398,19 @@ class Crosstab:
                     cols = ", ".join(self.value_cols)
                     where1 = " AND ".join(
                         [
-                            f'"{self.row_headers[k]}" = \'{row_header[k].replace("'", "''")}\''
+                            "\"{}\" = '{}'".format(
+                                self.row_headers[k],
+                                row_header[k].replace("'", "''"),
+                            )
                             for k in range(len(self.row_headers))
                         ],
                     )
                     where2 = " AND ".join(
                         [
-                            f'"{self.col_headers[k]}" = "{col_header[k].replace("'", "''")}"'
+                            "\"{}\" = '{}'".format(
+                                self.col_headers[k],
+                                col_header[k].replace("'", "''"),
+                            )
                             for k in range(len(self.col_headers))
                         ],
                     )
