@@ -397,13 +397,19 @@ class Crosstab:
                 for j, col_header in enumerate(col_header_vals):
                     cols = ", ".join(self.value_cols)
                     where1 = " AND ".join(
-                        [f"\"{self.row_headers[k]}\" = '{row_header[k]}'" for k in range(len(self.row_headers))],
+                        [
+                            f'"{self.row_headers[k]}" = \'{row_header[k].replace("'", "''")}\''
+                            for k in range(len(self.row_headers))
+                        ],
                     )
                     where2 = " AND ".join(
-                        [f'"{self.col_headers[k]}" = "{col_header[k]}"' for k in range(len(self.col_headers))],
+                        [
+                            f'"{self.col_headers[k]}" = "{col_header[k].replace("'", "''")}"'
+                            for k in range(len(self.col_headers))
+                        ],
                     )
                     sql = f"SELECT {cols} FROM data WHERE {where1} AND {where2};"
-                    # logger.debug(sql)
+                    logger.debug(sql)
                     cursor.execute(sql)
                     if cursor.rowcount > 1:
                         raise ValueError(
