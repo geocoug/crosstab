@@ -332,7 +332,7 @@ toml = [
 
 [[package]]
 name = "crosstab"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "openpyxl" },
 ]

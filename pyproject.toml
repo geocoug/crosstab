@@ -15,7 +15,6 @@ classifiers = [
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: Python Modules",
-    "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
 ]
 dependencies = ["openpyxl"]
 keywords = [
@@ -55,6 +54,9 @@ version = { attr = "crosstab.crosstab.__version__" }
 Homepage = "https://crosstab.readthedocs.io"
 Repository = "https://github.com/geocoug/crosstab"
 Issues = "https://github.com/geocoug/crosstab/issues"
+
+[build-system]
+requires = ["setuptools>=67.6.1", "wheel>=0.40.0"]
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
