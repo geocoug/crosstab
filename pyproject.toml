@@ -28,7 +28,7 @@ keywords = [
     "table",
 ]
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
     "build>=1.2.2.post1",
     "bump-my-version>=1.2.0",
