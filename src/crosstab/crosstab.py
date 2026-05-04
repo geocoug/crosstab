@@ -5,6 +5,7 @@ from __future__ import annotations
 import datetime
 import getpass
 import logging
+import os
 import warnings
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
@@ -34,6 +35,24 @@ logger = logging.getLogger(__name__)
 # 1-indexed coordinates of the top-left of the crosstab table on the output sheet.
 XTAB_START_ROW = 1
 XTAB_START_COL = 1
+
+
+def _current_user() -> str:
+    """Best-effort username for the README metadata sheet.
+
+    ``getpass.getuser()`` raises ``ModuleNotFoundError`` on Windows when
+    none of the standard env vars are set (it falls back to ``import pwd``,
+    which is Unix-only). We try the env vars first and fall back to
+    ``"unknown"`` so a crosstab run never fails over a metadata field.
+    """
+    for var in ("USERNAME", "USER", "LOGNAME", "LNAME"):
+        value = os.environ.get(var)
+        if value:
+            return value
+    try:
+        return getpass.getuser()
+    except Exception:  # pragma: no cover
+        return "unknown"
 
 
 def _quote_ident(name: str) -> str:
@@ -299,7 +318,7 @@ class Crosstab:
                     "Creation Time",
                     datetime.datetime.now().isoformat(sep=" ", timespec="seconds"),
                 ),
-                ("User", getpass.getuser()),
+                ("User", _current_user()),
                 ("Script Version", __version__),
                 ("Input File", self.incsv.resolve().as_posix()),
                 ("Output File", self.outxlsx.resolve().as_posix()),

@@ -12,7 +12,7 @@ from click.testing import CliRunner
 
 from crosstab import __version__
 from crosstab.cli import app
-from crosstab.crosstab import Crosstab, _quote_ident
+from crosstab.crosstab import Crosstab, _current_user, _quote_ident
 
 runner = CliRunner()
 
@@ -96,8 +96,11 @@ def test_repr_contains_paths(temp_csv_file, temp_xlsx_file):
     )
     rep = repr(crosstab)
     assert "Crosstab(" in rep
-    assert str(temp_csv_file) in rep
-    assert str(temp_xlsx_file) in rep
+    # Compare via the path's repr — on Windows ``WindowsPath.__repr__``
+    # double-escapes backslashes so ``str(path)`` is not a substring of
+    # the surrounding repr.
+    assert repr(temp_csv_file) in rep
+    assert repr(temp_xlsx_file) in rep
     assert "header1" in rep
     assert "header2" in rep
     assert "value" in rep
@@ -615,6 +618,32 @@ def test_cli_keep_sqlite_emits_deprecation(tmp_path):
         )
     assert result.exit_code == 0, result.output
     assert any(issubclass(w.category, DeprecationWarning) and "keep_sqlite" in str(w.message) for w in captured)
+
+
+# ── Environment-aware helpers ─────────────────────────────────────────────────
+
+
+def test_current_user_uses_env_var(monkeypatch):
+    """When USERNAME/USER/LOGNAME/LNAME is set, ``_current_user`` returns it
+    without consulting ``getpass``."""
+    for var in ("USERNAME", "LOGNAME", "LNAME"):
+        monkeypatch.delenv(var, raising=False)
+    monkeypatch.setenv("USER", "alice")
+    monkeypatch.setattr(
+        "crosstab.crosstab.getpass.getuser",
+        lambda: pytest.fail("getpass.getuser must not be called when env is populated"),
+    )
+    assert _current_user() == "alice"
+
+
+def test_current_user_falls_back_to_getpass(monkeypatch):
+    """With every username env var cleared, ``_current_user`` falls back to
+    ``getpass.getuser()``. This covers the Windows-under-tox path where
+    ``getpass`` would otherwise import the non-existent ``pwd`` module."""
+    for var in ("USERNAME", "USER", "LOGNAME", "LNAME"):
+        monkeypatch.delenv(var, raising=False)
+    monkeypatch.setattr("crosstab.crosstab.getpass.getuser", lambda: "tester")
+    assert _current_user() == "tester"
 
 
 # ── Identifier quoting & special-character headers ────────────────────────────
