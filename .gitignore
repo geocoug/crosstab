@@ -1,12 +1,33 @@
 .venv/
-*log*
-*cache*
-.coverage
 .env
-dist/
-*.egg-info
+*.log
+
+# Python build / packaging
 build/
-docs/_build/
+dist/
+*.egg-info/
+*.pyc
+*.pyo
+
+# Caches
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Coverage
+.coverage
+coverage.xml
+htmlcov/
+
+# Docs build output
 site/
+docs/_build/
+
+# Generated artifacts (test outputs)
 *.sqlite
 *.xlsx
+
+# Editor / agent metadata
+.claude/
+.DS_Store

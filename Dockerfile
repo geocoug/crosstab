@@ -7,7 +7,9 @@ WORKDIR /tmp/build
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 COPY ./pyproject.toml .
-COPY ./crosstab ./crosstab
+COPY ./README.md .
+COPY ./LICENSE .
+COPY ./src ./src
 
 RUN /bin/uv pip install --no-cache /tmp/build
 

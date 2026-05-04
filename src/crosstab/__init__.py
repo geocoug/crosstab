@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+from importlib.metadata import PackageNotFoundError, version
 
 from .crosstab import (
     Crosstab,
@@ -8,8 +8,12 @@ from .crosstab import (
     __license__,
     __title__,
     __url__,
-    __version__,
 )
+
+try:
+    __version__ = version("crosstab")
+except PackageNotFoundError:  # pragma: no cover
+    __version__ = "unknown"
 
 __all__ = [
     "Crosstab",

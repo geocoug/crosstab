@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
 import logging
+import sys
 import tempfile
 from pathlib import Path
+from unittest.mock import patch
 
 import openpyxl
 import pytest
 
-from crosstab.crosstab import Crosstab
+from crosstab.crosstab import Crosstab, cli, clparser
 
 logger = logging.getLogger(__name__)
 
@@ -16,6 +18,12 @@ CSV_CONTENT = """header1,header2,header3,value,unit
 A,1,2018,10,%
 A,1,2019,20,%
 B,2,2018,30,%
+B,2,2019,40,%
+"""
+
+CSV_DUPLICATE_CONTENT = """header1,header2,header3,value,unit
+A,1,2018,10,%
+A,1,2018,11,%
 B,2,2019,40,%
 """
 
@@ -47,6 +55,16 @@ def temp_csv_file():
 
 
 @pytest.fixture
+def temp_csv_with_duplicates():
+    """Fixture for a CSV file containing duplicate row/col combinations."""
+    with tempfile.NamedTemporaryFile(mode="w+", suffix=".csv", delete=False) as f:
+        f.write(CSV_DUPLICATE_CONTENT)
+        f.seek(0)
+        yield Path(f.name)
+    Path(f.name).unlink()
+
+
+@pytest.fixture
 def temp_xlsx_file():
     """Fixture to create a temporary XLSX file"""
     with tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False) as f:
@@ -67,6 +85,35 @@ def test_validate_args(temp_csv_file, temp_xlsx_file):
     assert crosstab.outxlsx == temp_xlsx_file
 
 
+def test_default_output_path(temp_csv_file):
+    """When outxlsx is not provided, default to <stem>_crosstab.xlsx alongside the input."""
+    crosstab = Crosstab(
+        incsv=temp_csv_file,
+        row_headers=("header1",),
+        col_headers=("header2",),
+        value_cols=("value",),
+    )
+    assert crosstab.outxlsx == temp_csv_file.with_name(temp_csv_file.stem + "_crosstab.xlsx")
+
+
+def test_repr_contains_paths(temp_csv_file, temp_xlsx_file):
+    """__repr__ should contain the configured paths and headers."""
+    crosstab = Crosstab(
+        incsv=temp_csv_file,
+        outxlsx=temp_xlsx_file,
+        row_headers=("header1",),
+        col_headers=("header2",),
+        value_cols=("value",),
+    )
+    rep = repr(crosstab)
+    assert "Crosstab(" in rep
+    assert str(temp_csv_file) in rep
+    assert str(temp_xlsx_file) in rep
+    assert "header1" in rep
+    assert "header2" in rep
+    assert "value" in rep
+
+
 def test_invalid_args_missing_file():
     """Test with missing CSV file"""
     with pytest.raises(ValueError, match="Input file .* does not exist."):
@@ -76,6 +123,20 @@ def test_invalid_args_missing_file():
             row_headers=("header1",),
             col_headers=("header2",),
             value_cols=("value", "unit"),
+        )
+
+
+def test_invalid_args_not_a_file(tmp_path):
+    """Test with a directory passed as incsv."""
+    directory = tmp_path / "not_a_file.csv"
+    directory.mkdir()
+    with pytest.raises(ValueError, match="is not a file"):
+        Crosstab(
+            incsv=directory,
+            outxlsx=Path("output.xlsx"),
+            row_headers=("header1",),
+            col_headers=("header2",),
+            value_cols=("value",),
         )
 
 
@@ -93,6 +154,78 @@ def test_invalid_args_empty_file():
             value_cols=("value", "unit"),
         )
     temp_csv.unlink()
+
+
+def test_invalid_args_wrong_csv_extension(tmp_path):
+    """Input must have a .csv extension."""
+    bad = tmp_path / "input.txt"
+    bad.write_text("a,b\n1,2\n")
+    with pytest.raises(ValueError, match="is not a CSV file"):
+        Crosstab(
+            incsv=bad,
+            outxlsx=Path("output.xlsx"),
+            row_headers=("a",),
+            col_headers=("b",),
+            value_cols=("a",),
+        )
+
+
+def test_invalid_args_wrong_xlsx_extension(temp_csv_file, tmp_path):
+    """Output must have a .xlsx extension."""
+    bad = tmp_path / "output.csv"
+    with pytest.raises(ValueError, match="must have an XLSX extension"):
+        Crosstab(
+            incsv=temp_csv_file,
+            outxlsx=bad,
+            row_headers=("header1",),
+            col_headers=("header2",),
+            value_cols=("value",),
+        )
+
+
+def test_invalid_args_empty_row_headers(temp_csv_file, temp_xlsx_file):
+    with pytest.raises(ValueError, match="No row headers specified."):
+        Crosstab(
+            incsv=temp_csv_file,
+            outxlsx=temp_xlsx_file,
+            row_headers=(),
+            col_headers=("header2",),
+            value_cols=("value",),
+        )
+
+
+def test_invalid_args_empty_col_headers(temp_csv_file, temp_xlsx_file):
+    with pytest.raises(ValueError, match="No column headers specified."):
+        Crosstab(
+            incsv=temp_csv_file,
+            outxlsx=temp_xlsx_file,
+            row_headers=("header1",),
+            col_headers=(),
+            value_cols=("value",),
+        )
+
+
+def test_invalid_args_empty_value_cols(temp_csv_file, temp_xlsx_file):
+    with pytest.raises(ValueError, match="No value columns specified."):
+        Crosstab(
+            incsv=temp_csv_file,
+            outxlsx=temp_xlsx_file,
+            row_headers=("header1",),
+            col_headers=("header2",),
+            value_cols=(),
+        )
+
+
+def test_invalid_args_unknown_header(temp_csv_file, temp_xlsx_file):
+    """Requesting a column that does not exist in the CSV should raise."""
+    with pytest.raises(ValueError, match="Headers not found in CSV file"):
+        Crosstab(
+            incsv=temp_csv_file,
+            outxlsx=temp_xlsx_file,
+            row_headers=("not_a_real_column",),
+            col_headers=("header2",),
+            value_cols=("value",),
+        )
 
 
 def test_csv_to_sqlite(temp_csv_file):
@@ -113,6 +246,41 @@ def test_csv_to_sqlite(temp_csv_file):
     conn.close()
 
 
+def test_keep_sqlite_overwrites_existing(tmp_path):
+    """Pre-existing SQLite file at the target path is removed before re-creation."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    sqlite_path = csv_path.with_suffix(".sqlite")
+    sqlite_path.write_bytes(b"stale")
+    assert sqlite_path.exists()
+
+    crosstab = Crosstab(
+        incsv=csv_path,
+        outxlsx=tmp_path / "out.xlsx",
+        row_headers=("header1",),
+        col_headers=("header2",),
+        value_cols=("value",),
+        keep_sqlite=True,
+    )
+    crosstab.conn.close()
+    # File was replaced, not appended-to.
+    assert sqlite_path.exists()
+    assert sqlite_path.read_bytes() != b"stale"
+
+
+def test_duplicate_row_col_combination_raises(temp_csv_with_duplicates, temp_xlsx_file):
+    """When the same row/col combination appears twice, crosstab() should raise."""
+    crosstab = Crosstab(
+        incsv=temp_csv_with_duplicates,
+        outxlsx=temp_xlsx_file,
+        row_headers=("header1",),
+        col_headers=("header2", "header3"),
+        value_cols=("value",),
+    )
+    with pytest.raises(ValueError, match="Multiple values found"):
+        crosstab.crosstab()
+
+
 def test_crosstab_creation(temp_csv_file, temp_xlsx_file):
     """Test the creation of a crosstab file."""
     crosstab = Crosstab(
@@ -129,6 +297,22 @@ def test_crosstab_creation(temp_csv_file, temp_xlsx_file):
     # Test that the xlsx file has 3 sheets
     wb = openpyxl.load_workbook(temp_xlsx_file)
     assert len(wb.sheetnames) == 3
+
+
+def test_crosstab_omits_source_sheet_when_keep_src_false(temp_csv_file, temp_xlsx_file):
+    """With keep_src=False the Source Data sheet should not be created."""
+    Crosstab(
+        incsv=temp_csv_file,
+        outxlsx=temp_xlsx_file,
+        row_headers=("header1",),
+        col_headers=("header2", "header3"),
+        value_cols=("value",),
+        keep_src=False,
+    ).crosstab()
+    wb = openpyxl.load_workbook(temp_xlsx_file)
+    assert "Source Data" not in wb.sheetnames
+    assert "Crosstab" in wb.sheetnames
+    assert "README" in wb.sheetnames
 
 
 def test_crosstab_rows_single_value_column(temp_csv_file, temp_xlsx_file):
@@ -237,3 +421,145 @@ def test_crosstab_rows_multi_value_column(temp_csv_file, temp_xlsx_file):
     assert ws["H5"].value == "40"
     assert ws["I5"].value == "%"
     wb.close()
+
+
+# ── CLI tests ─────────────────────────────────────────────────────────────────
+
+
+def _cli_argv(*extra: str) -> list[str]:
+    return ["crosstab", *extra]
+
+
+def test_clparser_builds():
+    """clparser should return a working ArgumentParser."""
+    parser = clparser()
+    args = parser.parse_args(
+        ["-f", "x.csv", "-r", "a", "-c", "b", "-v", "v"],
+    )
+    assert args.incsv == Path("x.csv")
+    assert args.row_headers == ["a"]
+    assert args.col_headers == ["b"]
+    assert args.value_cols == ["v"]
+    assert args.keep_sqlite is False
+    assert args.keep_src is False
+    assert args.quiet is False
+    assert args.debug is False
+
+
+def test_cli_version_flag(capsys):
+    """`--version` should print the version and exit 0."""
+    with pytest.raises(SystemExit) as exc, patch.object(sys, "argv", _cli_argv("--version")):
+        cli()
+    assert exc.value.code == 0
+    out = capsys.readouterr().out
+    assert "crosstab" in out
+
+
+def test_cli_runs_end_to_end(tmp_path):
+    """Invoke the CLI with valid args and confirm the output XLSX is produced."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    out_path = tmp_path / "out.xlsx"
+    argv = _cli_argv(
+        "-q",
+        "-s",
+        "-f",
+        str(csv_path),
+        "-o",
+        str(out_path),
+        "-r",
+        "header1",
+        "-c",
+        "header2",
+        "header3",
+        "-v",
+        "value",
+    )
+    with patch.object(sys, "argv", argv):
+        cli()
+    assert out_path.exists()
+    wb = openpyxl.load_workbook(out_path)
+    assert "Crosstab" in wb.sheetnames
+    assert "Source Data" in wb.sheetnames
+    wb.close()
+
+
+def test_cli_debug_log_to_file(tmp_path):
+    """`--debug` plus `--log` should write debug output to the log file."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    out_path = tmp_path / "out.xlsx"
+    log_path = tmp_path / "run.log"
+    argv = _cli_argv(
+        "-d",
+        "-l",
+        str(log_path),
+        "-f",
+        str(csv_path),
+        "-o",
+        str(out_path),
+        "-r",
+        "header1",
+        "-c",
+        "header2",
+        "header3",
+        "-v",
+        "value",
+    )
+    with patch.object(sys, "argv", argv):
+        cli()
+    assert out_path.exists()
+    assert log_path.exists()
+    assert log_path.read_text()  # non-empty
+
+
+def test_cli_value_error_exits_nonzero(tmp_path):
+    """A ValueError from the engine should produce exit code 1."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_DUPLICATE_CONTENT)
+    out_path = tmp_path / "out.xlsx"
+    argv = _cli_argv(
+        "-q",
+        "-f",
+        str(csv_path),
+        "-o",
+        str(out_path),
+        "-r",
+        "header1",
+        "-c",
+        "header2",
+        "header3",
+        "-v",
+        "value",
+    )
+    with patch.object(sys, "argv", argv), pytest.raises(SystemExit) as exc:
+        cli()
+    assert exc.value.code == 1
+
+
+def test_cli_unexpected_error_exits_nonzero(tmp_path):
+    """An unexpected exception from the engine should produce exit code 1."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    out_path = tmp_path / "out.xlsx"
+    argv = _cli_argv(
+        "-q",
+        "-f",
+        str(csv_path),
+        "-o",
+        str(out_path),
+        "-r",
+        "header1",
+        "-c",
+        "header2",
+        "header3",
+        "-v",
+        "value",
+    )
+    with (
+        patch("crosstab.crosstab.Crosstab.crosstab", side_effect=RuntimeError("boom")),
+        patch.object(sys, "argv", argv),
+        pytest.raises(SystemExit) as exc,
+    ):
+        cli()
+    assert exc.value.code == 1

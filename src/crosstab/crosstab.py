@@ -11,6 +11,7 @@ import sqlite3
 import sys
 import traceback
 from collections.abc import Generator
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
 import openpyxl
@@ -23,8 +24,12 @@ __author__ = "Caleb Grant"
 __url__ = "https://github.com/geocoug/crosstab"
 __author_email__ = "grantcaleb22@gmail.com"
 __license__ = "GNU GPLv3"
-__version__ = "0.0.15"
 __description__ = "Rearrange data from a normalized CSV format to a crosstabulated format, with styling."
+
+try:
+    __version__ = version("crosstab")
+except PackageNotFoundError:  # pragma: no cover
+    __version__ = "unknown"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -293,7 +298,9 @@ class Crosstab:
         # Add a README sheet with metadata about the crosstab
         logger.debug("Creating README sheet.")
         readme = wb.active
-        if not readme:
+        if not readme:  # pragma: no cover
+            # openpyxl.Workbook() always provides a default active sheet,
+            # so this fallback is defensive and not exercised in practice.
             readme = wb.create_sheet()
         readme.title = "README"
         metadata = {
@@ -417,7 +424,9 @@ class Crosstab:
                     sql = f"SELECT {cols} FROM data WHERE {where1} AND {where2};"
                     logger.debug(sql)
                     cursor.execute(sql)
-                    if cursor.rowcount > 1:
+                    if cursor.rowcount > 1:  # pragma: no cover
+                        # Unreachable: duplicate row/col combinations are caught
+                        # earlier by the GROUP BY ... HAVING COUNT(*) > 1 check.
                         raise ValueError(
                             f"Multiple values found for row/column combination: {row_header}, {col_header}",
                         )
@@ -585,7 +594,10 @@ def cli() -> None:
             keep_sqlite=args.keep_sqlite,
             keep_src=args.keep_src,
         ).crosstab()
-    except SystemExit as x:
+    except SystemExit as x:  # pragma: no cover
+        # argparse's --version/--help raise SystemExit from parse_args(),
+        # which is called outside this try block; the engine itself never
+        # calls sys.exit(), so this handler is defensive.
         sys.exit(x.code)
     except ValueError:
         strace = traceback.extract_tb(sys.exc_info()[2])[-1:]
