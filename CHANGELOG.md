@@ -8,6 +8,10 @@ ______________________________________________________________________
 
 ## [Unreleased]
 
+______________________________________________________________________
+
+## [0.2.0] - 2026-05-04
+
 ### Changed
 
 - Replaced the `argparse` CLI with a
@@ -92,4 +96,5 @@ revamp.
 
 [0.0.15]: https://github.com/geocoug/crosstab/releases/tag/v0.0.15
 [0.1.0]: https://github.com/geocoug/crosstab/releases/tag/v0.1.0
-[unreleased]: https://github.com/geocoug/crosstab/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/geocoug/crosstab/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/geocoug/crosstab/releases/tag/v0.2.0
