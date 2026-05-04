@@ -13,8 +13,7 @@ build:
       - pip install -e .
     pre_build:
       - cp README.md docs/index.md
-      - mkdir -p docs/about
-      - cp CHANGELOG.md docs/about/change_log.md
+      - cp CHANGELOG.md docs/change_log.md
     build:
       html:
         - zensical build

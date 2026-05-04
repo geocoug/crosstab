@@ -2,22 +2,15 @@
 
 from __future__ import annotations
 
-import argparse
-import csv
 import datetime
 import getpass
 import logging
-import sqlite3
-import sys
-import traceback
-from collections.abc import Generator
+import warnings
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
-import openpyxl
-from openpyxl.styles import Border, Color, Font, NamedStyle, PatternFill, Side
-from openpyxl.styles.alignment import Alignment
-from openpyxl.utils.cell import get_column_letter
+import duckdb
+import xlsxwriter
 
 __title__ = "crosstab"
 __author__ = "Caleb Grant"
@@ -38,81 +31,70 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Row number to start writing the crosstab table. Must be > 0.
+# 1-indexed coordinates of the top-left of the crosstab table on the output sheet.
 XTAB_START_ROW = 1
-# Column number to start writing the crosstab table. Must be > 0.
 XTAB_START_COL = 1
 
-"""
-Excel styling using named styles.
 
-See: https://openpyxl.readthedocs.io/en/stable/styles.html
-"""
-# Styling for the primary header rows (row headers and column headers)
-PRIMARY_HEADER_STYLE = NamedStyle(name="PRIMARY_HEADER_STYLE")
-PRIMARY_HEADER_STYLE.font = Font(bold=True, size=12)
-PRIMARY_HEADER_STYLE.fill = PatternFill(patternType="solid", fgColor=Color("D9D9D9"))
-PRIMARY_HEADER_STYLE.alignment = Alignment(horizontal="center", vertical="center")
-PRIMARY_HEADER_STYLE.border = Border(
-    left=Side(border_style="thin", color=Color("000000")),
-    right=Side(border_style="thin", color=Color("000000")),
-    top=Side(border_style="thin", color=Color("000000")),
-    bottom=Side(border_style="thin", color=Color("000000")),
-)
+def _quote_ident(name: str) -> str:
+    """Quote a SQL identifier for DuckDB by doubling internal double quotes.
 
-# Styling for the secondary header rows (value columns)
-SECONDARY_HEADER_STYLE = NamedStyle(name="SECONDARY_HEADER_STYLE")
-SECONDARY_HEADER_STYLE.font = Font(bold=True, size=12)
-SECONDARY_HEADER_STYLE.fill = PatternFill(patternType="solid", fgColor=Color("F2F2F2"))
-SECONDARY_HEADER_STYLE.alignment = Alignment(horizontal="center", vertical="center")
-SECONDARY_HEADER_STYLE.border = Border(
-    left=Side(border_style="thin", color=Color("000000")),
-    right=Side(border_style="thin", color=Color("000000")),
-    top=Side(border_style="thin", color=Color("000000")),
-    bottom=Side(border_style="thin", color=Color("000000")),
-)
-
-# Styling for the data cells
-DATA_STYLE = NamedStyle(name="DATA_STYLE")
-DATA_STYLE.font = Font(bold=False, size=12)
-DATA_STYLE.fill = PatternFill(patternType="solid", fgColor=Color("ffffff"))
-DATA_STYLE.alignment = Alignment(horizontal="left", vertical="center")
-DATA_STYLE.border = Border(
-    left=Side(border_style="thin", color=Color("000000")),
-    right=Side(border_style="thin", color=Color("000000")),
-    top=Side(border_style="thin", color=Color("000000")),
-    bottom=Side(border_style="thin", color=Color("000000")),
-)
-
-# Styling for the title text
-TITLE_TEXT_STYLE = NamedStyle(name="TITLE_TEXT_STYLE")
-TITLE_TEXT_STYLE.font = Font(name="Arial", bold=True, size=11, color=Color("005782"))
-TITLE_TEXT_STYLE.alignment = Alignment(horizontal="center", vertical="center")
-
-# Styling for the README sheet - items
-METADATA_ITEM_STYLE = NamedStyle(name="METADATA_ITEM_STYLE")
-METADATA_ITEM_STYLE.font = Font(bold=True, size=12)
-METADATA_ITEM_STYLE.alignment = Alignment(horizontal="right", vertical="center")
-METADATA_ITEM_STYLE.border = Border(
-    left=Side(border_style="thin", color=Color("000000")),
-    right=Side(border_style="thin", color=Color("000000")),
-    top=Side(border_style="thin", color=Color("000000")),
-    bottom=Side(border_style="thin", color=Color("000000")),
-)
-
-# Styling for the README sheet - values
-METADATA_VALUE_STYLE = NamedStyle(name="METADATA_VALUE_STYLE")
-METADATA_VALUE_STYLE.font = Font(bold=False, size=12)
-METADATA_VALUE_STYLE.alignment = Alignment(horizontal="left", vertical="center")
-METADATA_VALUE_STYLE.border = Border(
-    left=Side(border_style="thin", color=Color("000000")),
-    right=Side(border_style="thin", color=Color("000000")),
-    top=Side(border_style="thin", color=Color("000000")),
-    bottom=Side(border_style="thin", color=Color("000000")),
-)
+    Allows arbitrary CSV column names — including spaces, parentheses,
+    embedded quotes, unicode, leading digits, and SQL reserved words — to
+    appear unmodified in DuckDB queries.
+    """
+    return '"' + str(name).replace('"', '""') + '"'
 
 
 class Crosstab:
+    """Rearrange a normalized CSV into a crosstabulated XLSX workbook.
+
+    The crosstab is computed by DuckDB in a single pass: the CSV is read
+    via ``read_csv`` (with ``all_varchar=True`` to preserve string semantics),
+    duplicate row/column key combinations are detected with a
+    ``GROUP BY ... HAVING COUNT(*) > 1`` query, and the pivoted long-format
+    result is materialized with one aggregate query before being written to
+    the output workbook with ``xlsxwriter``.
+
+    The output workbook contains:
+
+    1. **README** — metadata about the run (timestamp, user, script version,
+       input/output file paths).
+    2. **Crosstab** — the pivoted table. Row-header values appear on the
+       left; column-header values fan out across the top, grouped per
+       value-column. ``autofilter`` is applied to the row-header row and
+       the column-header rows are frozen.
+    3. **Source Data** *(optional)* — the raw input CSV, included when
+       ``keep_src=True``.
+
+    Example
+    -------
+    Given an input CSV like
+
+    ```
+    location,sample,parameter,result,units
+    Loc1,Samp1,pH,7.2,
+    Loc1,Samp1,Hardness,120,mg/L
+    Loc2,Samp2,pH,8.0,
+    Loc2,Samp2,Hardness,3.23,mg/L
+    ```
+
+    a call such as
+
+    ```python
+    Crosstab(
+        incsv=Path("input.csv"),
+        row_headers=("location", "sample"),
+        col_headers=("parameter",),
+        value_cols=("result", "units"),
+    ).crosstab()
+    ```
+
+    produces a crosstab table with row keys ``(location, sample)``, one
+    column block per distinct ``parameter`` value, and two sub-columns
+    (``result`` and ``units``) inside each block.
+    """
+
     def __init__(
         self: Crosstab,
         incsv: Path,
@@ -123,96 +105,44 @@ class Crosstab:
         keep_sqlite: bool = False,
         keep_src: bool = False,
     ) -> None:
-        """Create a crosstab table from a normalized CSV file.
-
-        Args:
-            incsv (Path): Path to the input CSV file.
-            outxlsx (Path, optional): Path to the output XLSX file. The output file will contain at a minimum two sheets: one containing metadata about the crosstab and one containing the crosstab table. If the keep_src argument is True, the output file will contain a third sheet with the source data. If no output file is specified, the output will be written in the same directory as the input file, with the same name as the input file, appended with "_crosstab" and an XLSX extension. Defaults to None.
-            row_headers (tuple): Tuple of one or more column names to use as row headers. Unique values of these columns will appear at the beginning of every output line.
-            col_headers (tuple): Tuple of one or more column names to use as column headers in the output. A crosstab column (or columns) will be created for every unique combination of values of these fields in the input.
-            value_cols (tuple): Tuple of one or more column names with values to be used to fill the cells of the cross-table. If n columns names are specified, then there will be n columns in the output table for each of the column headers corresponding to values of the -c argument. The column names specified with the -v argument will be appended to the output column headers created from values of the -c argument. There should be only one value of the -v column(s) for each combination of the -r and -c columns; if there is more than one, a warning will be printed and only the first value will appear in the output. (That is, values are not combined in any way when there are multiple values for each output cell.)
-            keep_sqlite (bool, optional): Keep the temporary SQLite database file. The default is to delete it after the output file is created. The SQLite file is created in the same directory as the input file with the name of the input file (but with a .sqlite extension) and a single table named 'data'. Defaults to False.
-            keep_src (bool, optional): Keep a sheet with the source data in the output file. The sheet will be named 'Source Data'. Defaults to False.
-
-        Raises:
-            ValueError: Raised if the input file does not exist, is not a file, is empty, is not a CSV file, or if the row_headers, col_headers, or value_cols are not specified. Also raised if the output file does not have an XLSX extension.
-
-        Example:
-
-        If you have a CSV file with the following data:
-
-        ```csv
-        location,sample,cas_rn,parameter,concentration,units
-        Loc1,Samp1,7440-66-6,Zinc,1.0,mg/L
-        Loc1,Samp1,7439-89-6,Iron,2.7,mg/L
-        Loc2,Samp2,7440-66-6,Zinc,8.0,mg/L
-        Loc2,Samp2,7439-89-6,Iron,3.23,mg/L
-        ```
-
-        The code...
-
-        ```python
-        from pathlib import Path
-        from crosstab import Crosstab
-
-        Crosstab(
-            incsv=Path("input.csv"),
-            outxlsx=Path("output.xlsx"),
-            row_headers=("location", "sample"),
-            col_headers=("cas_rn", "parameter"),
-            value_cols=("concentration", "units"),
-            keep_sqlite=True,
-            keep_src=True,
-        ).crosstab()
-        ```
-
-        ...will produce a crosstab table with the following structure:
-
-        ```txt
-        +----------------------------------------------------------------------+
-        │          │   cas_rn  │       7440-66-6       │       7439-89-6       │
-        │          │ --------- │ --------------------- │ --------------------- │
-        │          │ parameter │          Zinc         │          Iron         │
-        │ -------- │ --------- │ --------------------- │ --------------------- │
-        │ location │  sample   │ concentration │ units │ concentration │ units │
-        │==========│===========│===============│=======│===============│=======│
-        │ Loc1     │ Samp1     │ 1.0           │ mg/L  │ 2.7           │ mg/L  │
-        │ Loc2     │ Samp2     │ 8.0           │ mg/L  │ 3.23          │ mg/L  │
-        +----------------------------------------------------------------------+
-        ```
-        """  # noqa: E501
-        self.incsv = incsv
-        if not outxlsx:
-            outxlsx = incsv.with_name(incsv.stem + "_crosstab.xlsx")
-        self.outxlsx = outxlsx
-        self.row_headers = row_headers
-        self.col_headers = col_headers
-        self.value_cols = value_cols
-        self.keep_sqlite = keep_sqlite
+        self.incsv = Path(incsv)
+        if outxlsx is None:
+            outxlsx = self.incsv.with_name(self.incsv.stem + "_crosstab.xlsx")
+        self.outxlsx = Path(outxlsx)
+        self.row_headers = tuple(row_headers)
+        self.col_headers = tuple(col_headers)
+        self.value_cols = tuple(value_cols)
         self.keep_src = keep_src
+        self.keep_sqlite = keep_sqlite
+        if keep_sqlite:
+            warnings.warn(
+                "keep_sqlite is deprecated and ignored: the engine no longer uses SQLite.",
+                DeprecationWarning,
+                stacklevel=2,
+            )
         logger.debug(self)
         self._validate_args()
-        with open(self.incsv) as f:
-            self.dialect = csv.Sniffer().sniff(f.readline())
-        self.csv_columns = next(self._csv_reader())
-        self.csv_reader = self._csv_reader()
+        self._con = duckdb.connect()
+        self.csv_columns = self._read_columns()
         self._validate_csv_headers()
-        self.conn = self._csv_to_sqlite()
 
     def __repr__(self: Crosstab) -> str:
-        return f"Crosstab(incsv={self.incsv!r}, outxlsx={self.outxlsx!r}, row_headers={self.row_headers!r}, col_headers={self.col_headers!r}, value_cols={self.value_cols!r}, keep_sqlite={self.keep_sqlite!r})"  # noqa: E501
+        return (
+            f"Crosstab(incsv={self.incsv!r}, outxlsx={self.outxlsx!r}, "
+            f"row_headers={self.row_headers!r}, col_headers={self.col_headers!r}, "
+            f"value_cols={self.value_cols!r}, keep_sqlite={self.keep_sqlite!r})"
+        )
 
     def _validate_args(self: Crosstab) -> None:
-        """Validate arguments passed to the Crosstab class."""
         if not self.incsv.exists():
             raise ValueError(f"Input file {self.incsv} does not exist.")
         if not self.incsv.is_file():
             raise ValueError(f"Input file {self.incsv} is not a file.")
         if not self.incsv.stat().st_size:
             raise ValueError(f"Input file {self.incsv} is empty.")
-        if not self.incsv.suffix == ".csv":
+        if self.incsv.suffix.lower() != ".csv":
             raise ValueError(f"Input file {self.incsv} is not a CSV file.")
-        if not self.outxlsx.suffix == ".xlsx":
+        if self.outxlsx.suffix.lower() != ".xlsx":
             raise ValueError("Output file must have an XLSX extension.")
         if not self.row_headers:
             raise ValueError("No row headers specified.")
@@ -221,401 +151,231 @@ class Crosstab:
         if not self.value_cols:
             raise ValueError("No value columns specified.")
 
-    def _csv_reader(self: Crosstab) -> Generator:
-        """Read the CSV file and yield each row as a dictionary."""
-        with open(self.incsv, newline="") as f:
-            reader = csv.DictReader(f, dialect=self.dialect)
-            yield from reader
+    def _read_columns(self: Crosstab) -> tuple[str, ...]:
+        rel = self._con.read_csv(str(self.incsv), all_varchar=True)
+        return tuple(rel.columns)
 
     def _validate_csv_headers(self: Crosstab) -> None:
-        """Validate all row_headers, col_headers, and value_cols exist in the CSV file."""
-        bad_headers = []
-        for header in self.row_headers + self.col_headers + self.value_cols:
-            if header not in self.csv_columns:
-                bad_headers.append(header)
-        if bad_headers:
-            raise ValueError(
-                f"Headers not found in CSV file: {', '.join(bad_headers)}.",
-            )
-
-    def _csv_to_sqlite(self: Crosstab) -> sqlite3.Connection:
-        """Convert the CSV file to a SQLite database.
-
-        If the keep_sqlite attribute is True, the SQLite database file will be saved to disk. Otherwise, the database will be created in memory. The database will have a single table named 'data' with columns corresponding to the CSV file headers.
-        """  # noqa: E501
-        if self.keep_sqlite:
-            sqlite_file = self.incsv.with_suffix(".sqlite")
-            logger.info(f"Creating SQLite database file: {sqlite_file}.")
-            if sqlite_file.exists():
-                sqlite_file.unlink()
-            conn = sqlite3.connect(sqlite_file)
-        else:
-            logger.debug("Creating in-memory SQLite database.")
-            conn = sqlite3.connect(":memory:")
-        logger.debug("Creating 'data' table in SQLite database.")
-        with conn:
-            cursor = conn.cursor()
-            coldef = ", ".join([f'"{col}"' for col in self.csv_columns])
-            cursor.execute(
-                f"CREATE TABLE data ({coldef});",
-            )
-            cursor.executemany(
-                f"INSERT INTO data VALUES ({', '.join(['?' for _ in self.csv_columns])});",
-                (tuple(row.values()) for row in self.csv_reader),
-            )
-        return conn
+        bad = [h for h in self.row_headers + self.col_headers + self.value_cols if h not in self.csv_columns]
+        if bad:
+            raise ValueError(f"Headers not found in CSV file: {', '.join(bad)}.")
 
     def crosstab(self: Crosstab) -> None:
-        """Create a crosstab table from the input CSV file.
-
-        The crosstab table will be written to the output XLSX file. The table will have row headers, column headers, and value columns as specified in the `row_headers`, `col_headers`, and `value_cols` arguments. The table will be written to a sheet named *Crosstab*. If the `keep_src` argument is `True`, a sheet named *Source Data* will be created with the source data from the input CSV file. A sheet named *README* will be created with metadata about the crosstab process. The metadata will include the creation time, user, script version, input file, output file, and SQLite file (if the `keep_sqlite` argument is `True`). Both the *README* and *Crosstab* sheets will be styled to make the table easier to read.
-        """  # noqa: E501
+        """Compute the crosstab and write it to ``self.outxlsx``."""
         logger.info(f"Creating crosstab table from {self.incsv}.")
-        # Get list of unique values for each row header
-        logger.debug("Getting list of unique values for each row header.")
-        with self.conn:
-            cursor = self.conn.cursor()
-            cursor.execute(f"SELECT DISTINCT {', '.join(self.row_headers)} FROM data;")
-            row_header_vals = cursor.fetchall()
 
-        # Check if there are multiple value columns for each row header key/column header key combination
-        logger.debug("Checking for multiple value columns for each row header key.")
-        with self.conn:
-            sql = f"SELECT {', '.join(self.row_headers + self.col_headers)}, COUNT(*) FROM data GROUP BY {', '.join(self.row_headers + self.col_headers)} HAVING COUNT(*) > 1;"  # noqa: E501
-            logger.debug(sql)
-            cursor = self.conn.cursor()
-            cursor.execute(sql)
-            multiple_vals = cursor.fetchall()
-            if multiple_vals:
-                raise ValueError(
-                    "Multiple values found for the row/column combination(s).",
-                )
+        # Stage the CSV as a DuckDB view named ``input_data``.
+        self._con.register(
+            "input_data",
+            self._con.read_csv(str(self.incsv), all_varchar=True),
+        )
 
-        # Create the workbook
-        logger.debug("Initializing the workbook.")
-        wb = openpyxl.Workbook()
+        rh_q = [_quote_ident(h) for h in self.row_headers]
+        ch_q = [_quote_ident(h) for h in self.col_headers]
+        vc_q = [_quote_ident(v) for v in self.value_cols]
 
-        # Add a README sheet with metadata about the crosstab
-        logger.debug("Creating README sheet.")
-        readme = wb.active
-        if not readme:  # pragma: no cover
-            # openpyxl.Workbook() always provides a default active sheet,
-            # so this fallback is defensive and not exercised in practice.
-            readme = wb.create_sheet()
-        readme.title = "README"
-        metadata = {
-            "Creation Time": datetime.datetime.now().isoformat(
-                sep=" ",
-                timespec="seconds",
-            ),
-            "User": getpass.getuser(),
-            "Script Version": __version__,
-            "Input File": self.incsv.resolve().as_posix(),
-            "Output File": self.outxlsx.resolve().as_posix(),
-            "SQLite File": (self.outxlsx.with_suffix(".sqlite").resolve().as_posix() if self.keep_sqlite else None),
-        }
-        readme.cell(row=1, column=1, value="Crosstab Metadata").style = TITLE_TEXT_STYLE
-        readme.merge_cells(start_row=1, start_column=1, end_row=1, end_column=2)
-        readme.cell(row=2, column=1, value="Item").style = PRIMARY_HEADER_STYLE
-        readme.cell(row=2, column=2, value="Value").style = PRIMARY_HEADER_STYLE
-        for i, (item, value) in enumerate(metadata.items(), start=1):
-            readme.cell(row=i + 2, column=1, value=item).style = METADATA_ITEM_STYLE
-            readme.cell(row=i + 2, column=2, value=value).style = METADATA_VALUE_STYLE
-        # Auto size all columns
-        for col in readme.columns:
-            length = max(len(str(cell.value)) for cell in col)
-            readme.column_dimensions[get_column_letter(col[0].column)].width = length
+        rh_list = ", ".join(rh_q)
+        ch_list = ", ".join(ch_q)
+        all_keys = ", ".join(rh_q + ch_q)
 
-        # Create the crosstab sheet
-        logger.debug("Creating crosstab sheet.")
-        sheet = wb.create_sheet("Crosstab")
+        # Duplicate detection: any (row_key, col_key) appearing more than once
+        # is a fatal error — the crosstab cannot represent it without losing
+        # information.
+        logger.debug("Checking for duplicate row/column key combinations.")
+        dup_sql = f"SELECT {all_keys} FROM input_data GROUP BY {all_keys} HAVING COUNT(*) > 1 LIMIT 1"
+        if self._con.execute(dup_sql).fetchone():
+            raise ValueError("Multiple values found for the row/column combination(s).")
 
-        # Get all of the unique column header values
-        logger.debug("Getting list of unique values for each column header.")
-        with self.conn:
-            cursor = self.conn.cursor()
-            cursor.execute(f"SELECT DISTINCT {', '.join(self.col_headers)} FROM data;")
-            col_header_vals = cursor.fetchall()
-        logger.debug("Writing crosstab table.")
-        # Write the column headers. If multiple column headers are specified, write them in separate rows.
-        # Space out each column by the number of value_cols specified.
-        start_col = len(self.row_headers) + XTAB_START_COL  # Column index to start writing the column headers
-        for i, col_header in enumerate(col_header_vals):
-            for c, hdr in enumerate(col_header):
-                if i == 0:
-                    logger.debug(f"Writing column header row: {self.col_headers[c]}.")
-                    # Label the header row
-                    sheet.cell(
-                        row=c + XTAB_START_ROW,
-                        column=start_col - 1,
-                        value=self.col_headers[c],
-                    )
-                    # Style the labels
-                    sheet.cell(row=c + XTAB_START_ROW, column=start_col - 1).style = SECONDARY_HEADER_STYLE
-                # Add the column header
-                sheet.cell(row=c + XTAB_START_ROW, column=start_col + i, value=hdr)
-                # Merge the column header cells
-                sheet.merge_cells(
-                    start_row=c + XTAB_START_ROW,
-                    start_column=start_col + i,
-                    end_row=c + XTAB_START_ROW,
-                    end_column=start_col + i + len(self.value_cols) - 1,
-                )
-                # Apply the header style to the merged cells
-                for col in range(start_col + i, start_col + i + len(self.value_cols)):
-                    sheet.cell(row=c + XTAB_START_ROW, column=col).style = PRIMARY_HEADER_STYLE
-            # Add the value columns below the column headers
-            logger.debug(f"Writing value columns for column header row: {col_header}.")
-            for j, value_col in enumerate(self.value_cols):
-                sheet.cell(
-                    row=len(self.col_headers) + XTAB_START_ROW,
-                    column=start_col + i + j,
-                    value=value_col,
-                ).style = SECONDARY_HEADER_STYLE
-            # If this is the last column header, reset the start_col index, otherwise, add the number of value columns
-            if i == len(col_header_vals) - 1:
-                start_col += len(self.value_cols) + 1
-            else:
-                start_col += len(self.value_cols) - 1
+        # Distinct row keys and col keys, sorted for deterministic output.
+        logger.debug("Fetching distinct row-header values.")
+        row_keys = self._con.execute(
+            f"SELECT DISTINCT {rh_list} FROM input_data ORDER BY {rh_list}",
+        ).fetchall()
+        logger.debug("Fetching distinct column-header values.")
+        col_keys = self._con.execute(
+            f"SELECT DISTINCT {ch_list} FROM input_data ORDER BY {ch_list}",
+        ).fetchall()
 
-        # Write the row headers and value columns
-        logger.debug(f"Writing row headers: {self.row_headers}.")
-        start_row = len(self.col_headers) + XTAB_START_ROW
-        for i in range(len(self.row_headers)):
-            sheet.cell(
-                row=start_row,
-                column=i + XTAB_START_COL,
-                value=self.row_headers[i],
-            ).style = PRIMARY_HEADER_STYLE
+        # Aggregated long-format result: one row per (row_key, col_key) with
+        # value columns. ``any_value`` is safe because duplicates are detected
+        # above, so each group has exactly one input row.
+        logger.debug("Fetching aggregated value rows.")
+        agg_select = ", ".join(rh_q + ch_q + [f"any_value({v}) AS {v}" for v in vc_q])
+        agg_rows = self._con.execute(
+            f"SELECT {agg_select} FROM input_data GROUP BY {all_keys}",
+        ).fetchall()
 
-        # Write the data
-        logger.debug("Writing crosstab data.")
-        with self.conn:
-            cursor = self.conn.cursor()
-            for i, row_header in enumerate(row_header_vals):
-                # Write the row keys
-                for h, hdr in enumerate(row_header):
-                    sheet.cell(
-                        row=start_row + i + 1,
-                        column=h + XTAB_START_COL,
-                        value=hdr,
-                    ).style = DATA_STYLE
-                # Write the data
-                for j, col_header in enumerate(col_header_vals):
-                    cols = ", ".join(self.value_cols)
-                    where1 = " AND ".join(
-                        [
-                            "\"{}\" = '{}'".format(
-                                self.row_headers[k],
-                                row_header[k].replace("'", "''"),
-                            )
-                            for k in range(len(self.row_headers))
-                        ],
-                    )
-                    where2 = " AND ".join(
-                        [
-                            "\"{}\" = '{}'".format(
-                                self.col_headers[k],
-                                col_header[k].replace("'", "''"),
-                            )
-                            for k in range(len(self.col_headers))
-                        ],
-                    )
-                    sql = f"SELECT {cols} FROM data WHERE {where1} AND {where2};"
-                    logger.debug(sql)
-                    cursor.execute(sql)
-                    if cursor.rowcount > 1:  # pragma: no cover
-                        # Unreachable: duplicate row/col combinations are caught
-                        # earlier by the GROUP BY ... HAVING COUNT(*) > 1 check.
-                        raise ValueError(
-                            f"Multiple values found for row/column combination: {row_header}, {col_header}",
+        n_rh = len(self.row_headers)
+        n_ch = len(self.col_headers)
+        cells: dict[tuple[tuple, tuple], tuple] = {}
+        for r in agg_rows:
+            row_key = r[:n_rh]
+            col_key = r[n_rh : n_rh + n_ch]
+            cells[(row_key, col_key)] = r[n_rh + n_ch :]
+
+        self._write_xlsx(row_keys, col_keys, cells)
+
+    def _write_xlsx(
+        self: Crosstab,
+        row_keys: list[tuple],
+        col_keys: list[tuple],
+        cells: dict[tuple[tuple, tuple], tuple],
+    ) -> None:
+        n_rh = len(self.row_headers)
+        n_ch = len(self.col_headers)
+        n_vc = len(self.value_cols)
+
+        wb = xlsxwriter.Workbook(str(self.outxlsx))
+        try:
+            title_fmt = wb.add_format(
+                {
+                    "font_name": "Arial",
+                    "bold": True,
+                    "font_size": 11,
+                    "font_color": "#005782",
+                    "align": "center",
+                    "valign": "vcenter",
+                },
+            )
+            primary_hdr = wb.add_format(
+                {
+                    "bold": True,
+                    "font_size": 12,
+                    "bg_color": "#D9D9D9",
+                    "align": "center",
+                    "valign": "vcenter",
+                    "border": 1,
+                    "border_color": "#000000",
+                },
+            )
+            secondary_hdr = wb.add_format(
+                {
+                    "bold": True,
+                    "font_size": 12,
+                    "bg_color": "#F2F2F2",
+                    "align": "center",
+                    "valign": "vcenter",
+                    "border": 1,
+                    "border_color": "#000000",
+                },
+            )
+            data_fmt = wb.add_format(
+                {
+                    "font_size": 12,
+                    "bg_color": "#FFFFFF",
+                    "align": "left",
+                    "valign": "vcenter",
+                    "border": 1,
+                    "border_color": "#000000",
+                },
+            )
+            meta_item = wb.add_format(
+                {
+                    "bold": True,
+                    "font_size": 12,
+                    "align": "right",
+                    "valign": "vcenter",
+                    "border": 1,
+                    "border_color": "#000000",
+                },
+            )
+            meta_value = wb.add_format(
+                {
+                    "font_size": 12,
+                    "align": "left",
+                    "valign": "vcenter",
+                    "border": 1,
+                    "border_color": "#000000",
+                },
+            )
+
+            # README sheet
+            readme = wb.add_worksheet("README")
+            readme.merge_range(0, 0, 0, 1, "Crosstab Metadata", title_fmt)
+            readme.write(1, 0, "Item", primary_hdr)
+            readme.write(1, 1, "Value", primary_hdr)
+            metadata = [
+                (
+                    "Creation Time",
+                    datetime.datetime.now().isoformat(sep=" ", timespec="seconds"),
+                ),
+                ("User", getpass.getuser()),
+                ("Script Version", __version__),
+                ("Input File", self.incsv.resolve().as_posix()),
+                ("Output File", self.outxlsx.resolve().as_posix()),
+            ]
+            for row_idx, (k, v) in enumerate(metadata, start=2):
+                readme.write(row_idx, 0, k, meta_item)
+                readme.write(row_idx, 1, v, meta_value)
+            readme.autofit()
+
+            # Crosstab sheet
+            sheet = wb.add_worksheet("Crosstab")
+
+            # Column-header labels (one row per col_header level), placed in
+            # the column immediately to the left of the data.
+            for c, ch in enumerate(self.col_headers):
+                sheet.write(c, n_rh - 1, ch, secondary_hdr)
+
+            # Column-header value cells, merged across n_vc value columns
+            # when multiple value columns are configured.
+            for i, col_key in enumerate(col_keys):
+                first_col = n_rh + i * n_vc
+                last_col = first_col + n_vc - 1
+                for c in range(n_ch):
+                    cell_val = col_key[c]
+                    if n_vc > 1:
+                        sheet.merge_range(
+                            c,
+                            first_col,
+                            c,
+                            last_col,
+                            cell_val,
+                            primary_hdr,
                         )
-                    data = cursor.fetchone()
-                    if data:
-                        for k, value in enumerate(data):
-                            sheet.cell(
-                                row=start_row + i + 1,
-                                column=len(self.row_headers) + XTAB_START_COL + j * len(self.value_cols) + k,
-                                value=value,
-                            ).style = DATA_STYLE
                     else:
-                        for k in range(len(self.value_cols)):
-                            sheet.cell(
-                                row=start_row + i + 1,
-                                column=len(self.row_headers) + XTAB_START_COL + j * len(self.value_cols) + k,
-                                value="",
-                            ).style = DATA_STYLE
+                        sheet.write(c, first_col, cell_val, primary_hdr)
+                # Value-column label row (just below the column-header rows).
+                for j, vc in enumerate(self.value_cols):
+                    sheet.write(n_ch, first_col + j, vc, secondary_hdr)
 
-        # Turn on filter for the row headers
-        filter_range = (
-            get_column_letter(XTAB_START_COL)
-            + str(start_row)
-            + ":"
-            + get_column_letter(XTAB_START_COL + len(self.row_headers) - 1)
-            + str(start_row)
-        )
-        logger.debug(f"Applying filters to the row headers: {filter_range}.")
-        sheet.auto_filter.ref = filter_range
+            # Row-header labels live on the same row as the value-column labels.
+            for h, rh in enumerate(self.row_headers):
+                sheet.write(n_ch, h, rh, primary_hdr)
 
-        # Freeze the row headers
-        logger.debug(f"Freezing the row headers: {filter_range}.")
-        sheet.freeze_panes = sheet.cell(row=start_row + 1, column=XTAB_START_COL)
+            # Data rows
+            data_row_start = n_ch + 1
+            for r, row_key in enumerate(row_keys):
+                row_idx = data_row_start + r
+                for h in range(n_rh):
+                    sheet.write(row_idx, h, row_key[h], data_fmt)
+                for i, col_key in enumerate(col_keys):
+                    values = cells.get((row_key, col_key))
+                    for j in range(n_vc):
+                        col_idx = n_rh + i * n_vc + j
+                        val = values[j] if values is not None else None
+                        if val is None:
+                            sheet.write_blank(row_idx, col_idx, None, data_fmt)
+                        else:
+                            sheet.write(row_idx, col_idx, val, data_fmt)
 
-        # Auto size all columns
-        logger.debug("Auto-sizing all columns.")
-        for col in sheet.columns:
-            sheet.column_dimensions[get_column_letter(col[0].column)].auto_size = True
+            sheet.autofilter(n_ch, 0, n_ch, n_rh - 1)
+            sheet.freeze_panes(data_row_start, 0)
+            sheet.autofit()
 
-        # Add a sheet with the source data
-        if self.keep_src:
-            logger.debug("Creating source data sheet.")
-            src_data = wb.create_sheet(title="Source Data")
-            with self.conn:
-                cursor = self.conn.cursor()
-                cursor.execute("SELECT * FROM data;")
-                raw_data_headers = [description[0] for description in cursor.description]
-                src_data.append(raw_data_headers)
-                for row in cursor.fetchall():
-                    src_data.append(row)
+            # Optional Source Data sheet — verbatim copy of the input CSV.
+            if self.keep_src:
+                src = wb.add_worksheet("Source Data")
+                src.write_row(0, 0, list(self.csv_columns))
+                src_rows = self._con.execute("SELECT * FROM input_data").fetchall()
+                for r_idx, row in enumerate(src_rows, start=1):
+                    src.write_row(r_idx, 0, list(row))
+                src.autofit()
 
-        logger.info(f"Saving output to {self.outxlsx}.")
-        wb.save(self.outxlsx)
+            logger.info(f"Saving output to {self.outxlsx}.")
+        finally:
+            wb.close()
 
-
-def clparser() -> argparse.ArgumentParser:
-    """Command line interface for the upsert function."""
-    parser = argparse.ArgumentParser(
-        description=__description__,
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""notes:\n1. Column names should be specified in the same case as they appear in the input file. If column names contain spaces, they should be wrapped in quotes.\n2. The -f option creates a temporary file in the same directory as the output file.  This file has the same name as the input file, but an extension of '.sqlite'.\n3. There are no inherent limits to the number of rows or columns in the input or output files.\n4. Missing required arguments will result in an exception rather than an error message, whatever the error logging option.  If no error logging option is specified, then if there are multiple values per cell (the most likely data error), a single message will be printed on the console.""",  # noqa: E501
-    )
-    parser.add_argument(
-        "--version",
-        action="version",
-        version=f"%(prog)s {__version__}",
-    )
-    parser.add_argument(
-        "-q",
-        "--quiet",
-        action="store_true",
-        help="suppress all console output",
-    )
-    parser.add_argument(
-        "-d",
-        "--debug",
-        action="store_true",
-        help="enable debug logging",
-    )
-    parser.add_argument(
-        "-l",
-        "--log",
-        metavar="LOGFILE",
-        dest="log",
-        type=Path,
-        help="log all output to a file",
-    )
-    parser.add_argument(
-        "-k",
-        "--keep-sqlite",
-        action="store_true",
-        help="keep the temporary SQLite database file. The default is to delete it after the output file is created. The SQLite file is created in the same directory as the output file with the name of the output file (but with a .sqlite extension) and a single table named 'data'.",  # noqa: E501
-    )
-    parser.add_argument(
-        "-s",
-        "--keep-src",
-        action="store_true",
-        help="keep a sheet with the source data in the output file. The default is to not include the source data in the output file.",  # noqa: E501
-    )
-    parser.add_argument(
-        "-f",
-        metavar="INPUT_CSV",
-        dest="incsv",
-        required=True,
-        type=Path,
-        help="input CSV file",
-    )
-    parser.add_argument(
-        "-o",
-        metavar="OUTPUT_XLSX",
-        dest="outxlsx",
-        required=False,
-        type=Path,
-        help="output XLSX file",
-    )
-    parser.add_argument(
-        "-r",
-        metavar="ROW_HEADERS",
-        dest="row_headers",
-        required=True,
-        nargs="+",
-        help="one or more column names to use as row headers. Unique values of these columns will appear at the beginning of every output line.",  # noqa: E501
-    )
-    parser.add_argument(
-        "-c",
-        metavar="COL_HEADERS",
-        dest="col_headers",
-        required=True,
-        nargs="+",
-        help="one or more column names to use as column headers in the output. A crosstab column (or columns) will be created for every unique combination of values of these fields in the input.",  # noqa: E501
-    )
-    parser.add_argument(
-        "-v",
-        metavar="VALUE_COLS",
-        dest="value_cols",
-        required=True,
-        nargs="+",
-        help="one or more column names with values to be used to fill the cells of the cross-table.  If n columns names are specified, then there will be n columns in the output table for each of the column headers corresponding to values of the -c argument.  The column names specified with the -v argument will be appended to the output column headers created from values of the -c argument.  There should be only one value of the -v column(s) for each combination of the -r and -c columns; if there is more than one, a warning will be printed and only the first value will appear in the output.  (That is, values are not combined in any way when there are multiple values for each output cell.)",  # noqa: E501
-    )
-    return parser
-
-
-def cli() -> None:
-    """Main command line entrypoint for the xtab function."""
-    args = clparser().parse_args()
-    if not args.quiet:
-        logger.addHandler(logging.StreamHandler())
-    if args.log:
-        logger.addHandler(logging.FileHandler(args.log))
-    if args.debug:
-        logger.setLevel(logging.DEBUG)
-        formatter = logging.Formatter(
-            "%(asctime)s %(name)s (%(lineno)d) %(levelname)s: %(message)s",
-            datefmt="[%Y-%m-%d %H:%M:%S]",
-        )
-        for handler in logger.handlers:
-            handler.setFormatter(formatter)
-    try:
-        Crosstab(
-            incsv=args.incsv,
-            outxlsx=args.outxlsx,
-            row_headers=args.row_headers,
-            col_headers=args.col_headers,
-            value_cols=args.value_cols,
-            keep_sqlite=args.keep_sqlite,
-            keep_src=args.keep_src,
-        ).crosstab()
-    except SystemExit as x:  # pragma: no cover
-        # argparse's --version/--help raise SystemExit from parse_args(),
-        # which is called outside this try block; the engine itself never
-        # calls sys.exit(), so this handler is defensive.
-        sys.exit(x.code)
-    except ValueError:
-        strace = traceback.extract_tb(sys.exc_info()[2])[-1:]
-        lno = strace[0][1]
-        src = strace[0][3]
-        logger.error(
-            f"ValueError on line {lno}: {sys.exc_info()[1]}",
-        )
-        sys.exit(1)
-    except Exception:
-        strace = traceback.extract_tb(sys.exc_info()[2])[-1:]
-        lno = strace[0][1]
-        src = strace[0][3]
-        logger.error(
-            f"Uncaught exception {sys.exc_info()[0]!s} ({sys.exc_info()[1]}) on line {lno} ({src}).",
-        )
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    cli()
+    def close(self: Crosstab) -> None:
+        """Release the DuckDB connection."""
+        self._con.close()

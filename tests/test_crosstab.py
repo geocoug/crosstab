@@ -1,15 +1,20 @@
 #!/usr/bin/env python
 
 import logging
-import sys
 import tempfile
+import warnings
 from pathlib import Path
 from unittest.mock import patch
 
 import openpyxl
 import pytest
+from click.testing import CliRunner
 
-from crosstab.crosstab import Crosstab, cli, clparser
+from crosstab import __version__
+from crosstab.cli import app
+from crosstab.crosstab import Crosstab, _quote_ident
+
+runner = CliRunner()
 
 logger = logging.getLogger(__name__)
 
@@ -26,22 +31,6 @@ A,1,2018,10,%
 A,1,2018,11,%
 B,2,2019,40,%
 """
-
-
-@pytest.fixture(scope="session")
-def global_variables():
-    """Set global variables for the test session."""
-    try:
-        return {
-            "SAMPLE_DATA_1": Path(__file__).parent / "data/sample1.csv",
-            "SAMPLE_DATA_2": Path(__file__).parent / "data/sample2.csv",
-        }
-    except Exception:
-        return None
-
-
-def test_crosstab_init(global_variables):
-    assert 1 == 1
 
 
 @pytest.fixture
@@ -228,8 +217,8 @@ def test_invalid_args_unknown_header(temp_csv_file, temp_xlsx_file):
         )
 
 
-def test_csv_to_sqlite(temp_csv_file):
-    """Test the conversion of a CSV file to SQLite."""
+def test_csv_columns_are_detected(temp_csv_file):
+    """The Crosstab constructor reads the CSV header row via DuckDB."""
     crosstab = Crosstab(
         incsv=temp_csv_file,
         outxlsx=Path("output.xlsx"),
@@ -237,35 +226,43 @@ def test_csv_to_sqlite(temp_csv_file):
         col_headers=("header2",),
         value_cols=("value", "unit"),
     )
-    conn = crosstab._csv_to_sqlite()
-    cursor = conn.cursor()
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='data';")
-    row = cursor.fetchone()
-    assert row is not None
-    assert row[0] == "data"
-    conn.close()
+    assert crosstab.csv_columns == ("header1", "header2", "header3", "value", "unit")
+    crosstab.close()
 
 
-def test_keep_sqlite_overwrites_existing(tmp_path):
-    """Pre-existing SQLite file at the target path is removed before re-creation."""
+def test_keep_sqlite_emits_deprecation_warning(temp_csv_file, temp_xlsx_file):
+    """`keep_sqlite=True` is accepted but emits a DeprecationWarning."""
+    with pytest.warns(DeprecationWarning, match="keep_sqlite is deprecated"):
+        Crosstab(
+            incsv=temp_csv_file,
+            outxlsx=temp_xlsx_file,
+            row_headers=("header1",),
+            col_headers=("header2",),
+            value_cols=("value",),
+            keep_sqlite=True,
+        ).close()
+
+
+def test_keep_sqlite_does_not_create_sqlite_file(tmp_path):
+    """The deprecated `keep_sqlite=True` flag must not produce a SQLite file."""
     csv_path = tmp_path / "input.csv"
     csv_path.write_text(CSV_CONTENT)
+    out_path = tmp_path / "out.xlsx"
     sqlite_path = csv_path.with_suffix(".sqlite")
-    sqlite_path.write_bytes(b"stale")
-    assert sqlite_path.exists()
 
-    crosstab = Crosstab(
-        incsv=csv_path,
-        outxlsx=tmp_path / "out.xlsx",
-        row_headers=("header1",),
-        col_headers=("header2",),
-        value_cols=("value",),
-        keep_sqlite=True,
-    )
-    crosstab.conn.close()
-    # File was replaced, not appended-to.
-    assert sqlite_path.exists()
-    assert sqlite_path.read_bytes() != b"stale"
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", DeprecationWarning)
+        Crosstab(
+            incsv=csv_path,
+            outxlsx=out_path,
+            row_headers=("header1",),
+            col_headers=("header2", "header3"),
+            value_cols=("value",),
+            keep_sqlite=True,
+        ).crosstab()
+
+    assert out_path.exists()
+    assert not sqlite_path.exists()
 
 
 def test_duplicate_row_col_combination_raises(temp_csv_with_duplicates, temp_xlsx_file):
@@ -289,14 +286,13 @@ def test_crosstab_creation(temp_csv_file, temp_xlsx_file):
         row_headers=("header1",),
         col_headers=("header2", "header3"),
         value_cols=("value", "unit"),
-        keep_sqlite=True,
         keep_src=True,
     )
     crosstab.crosstab()
     assert temp_xlsx_file.exists()
-    # Test that the xlsx file has 3 sheets
+    # README + Crosstab + Source Data
     wb = openpyxl.load_workbook(temp_xlsx_file)
-    assert len(wb.sheetnames) == 3
+    assert wb.sheetnames == ["README", "Crosstab", "Source Data"]
 
 
 def test_crosstab_omits_source_sheet_when_keep_src_false(temp_csv_file, temp_xlsx_file):
@@ -426,33 +422,18 @@ def test_crosstab_rows_multi_value_column(temp_csv_file, temp_xlsx_file):
 # ── CLI tests ─────────────────────────────────────────────────────────────────
 
 
-def _cli_argv(*extra: str) -> list[str]:
-    return ["crosstab", *extra]
+def test_cli_no_args_shows_help():
+    """Invoking with no arguments should print the help screen and exit 2."""
+    result = runner.invoke(app, [])
+    assert result.exit_code == 2
+    assert "Usage" in result.output
 
 
-def test_clparser_builds():
-    """clparser should return a working ArgumentParser."""
-    parser = clparser()
-    args = parser.parse_args(
-        ["-f", "x.csv", "-r", "a", "-c", "b", "-v", "v"],
-    )
-    assert args.incsv == Path("x.csv")
-    assert args.row_headers == ["a"]
-    assert args.col_headers == ["b"]
-    assert args.value_cols == ["v"]
-    assert args.keep_sqlite is False
-    assert args.keep_src is False
-    assert args.quiet is False
-    assert args.debug is False
-
-
-def test_cli_version_flag(capsys):
+def test_cli_version_flag():
     """`--version` should print the version and exit 0."""
-    with pytest.raises(SystemExit) as exc, patch.object(sys, "argv", _cli_argv("--version")):
-        cli()
-    assert exc.value.code == 0
-    out = capsys.readouterr().out
-    assert "crosstab" in out
+    result = runner.invoke(app, ["--version"])
+    assert result.exit_code == 0
+    assert __version__ in result.output
 
 
 def test_cli_runs_end_to_end(tmp_path):
@@ -460,27 +441,62 @@ def test_cli_runs_end_to_end(tmp_path):
     csv_path = tmp_path / "input.csv"
     csv_path.write_text(CSV_CONTENT)
     out_path = tmp_path / "out.xlsx"
-    argv = _cli_argv(
-        "-q",
-        "-s",
-        "-f",
-        str(csv_path),
-        "-o",
-        str(out_path),
-        "-r",
-        "header1",
-        "-c",
-        "header2",
-        "header3",
-        "-v",
-        "value",
+    result = runner.invoke(
+        app,
+        [
+            "-q",
+            "-s",
+            "-f",
+            str(csv_path),
+            "-o",
+            str(out_path),
+            "-r",
+            "header1",
+            "-c",
+            "header2",
+            "header3",
+            "-v",
+            "value",
+        ],
     )
-    with patch.object(sys, "argv", argv):
-        cli()
+    assert result.exit_code == 0, result.output
     assert out_path.exists()
     wb = openpyxl.load_workbook(out_path)
     assert "Crosstab" in wb.sheetnames
     assert "Source Data" in wb.sheetnames
+    wb.close()
+
+
+def test_cli_multi_value_flags_are_space_separated(tmp_path):
+    """`-r foo bar` consumes both tokens into row_headers (nargs='+' style)."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    out_path = tmp_path / "out.xlsx"
+    result = runner.invoke(
+        app,
+        [
+            "-q",
+            "-f",
+            str(csv_path),
+            "-o",
+            str(out_path),
+            "-r",
+            "header1",
+            "-c",
+            "header2",
+            "header3",
+            "-v",
+            "value",
+            "unit",
+        ],
+    )
+    assert result.exit_code == 0, result.output
+    wb = openpyxl.load_workbook(out_path)
+    ws = wb["Crosstab"]
+    # Two value columns means each column-header block gets two sub-columns,
+    # so the value-label row alternates "value" / "unit".
+    assert ws["B3"].value == "value"
+    assert ws["C3"].value == "unit"
     wb.close()
 
 
@@ -490,24 +506,26 @@ def test_cli_debug_log_to_file(tmp_path):
     csv_path.write_text(CSV_CONTENT)
     out_path = tmp_path / "out.xlsx"
     log_path = tmp_path / "run.log"
-    argv = _cli_argv(
-        "-d",
-        "-l",
-        str(log_path),
-        "-f",
-        str(csv_path),
-        "-o",
-        str(out_path),
-        "-r",
-        "header1",
-        "-c",
-        "header2",
-        "header3",
-        "-v",
-        "value",
+    result = runner.invoke(
+        app,
+        [
+            "-d",
+            "-l",
+            str(log_path),
+            "-f",
+            str(csv_path),
+            "-o",
+            str(out_path),
+            "-r",
+            "header1",
+            "-c",
+            "header2",
+            "header3",
+            "-v",
+            "value",
+        ],
     )
-    with patch.object(sys, "argv", argv):
-        cli()
+    assert result.exit_code == 0, result.output
     assert out_path.exists()
     assert log_path.exists()
     assert log_path.read_text()  # non-empty
@@ -518,23 +536,24 @@ def test_cli_value_error_exits_nonzero(tmp_path):
     csv_path = tmp_path / "input.csv"
     csv_path.write_text(CSV_DUPLICATE_CONTENT)
     out_path = tmp_path / "out.xlsx"
-    argv = _cli_argv(
-        "-q",
-        "-f",
-        str(csv_path),
-        "-o",
-        str(out_path),
-        "-r",
-        "header1",
-        "-c",
-        "header2",
-        "header3",
-        "-v",
-        "value",
+    result = runner.invoke(
+        app,
+        [
+            "-q",
+            "-f",
+            str(csv_path),
+            "-o",
+            str(out_path),
+            "-r",
+            "header1",
+            "-c",
+            "header2",
+            "header3",
+            "-v",
+            "value",
+        ],
     )
-    with patch.object(sys, "argv", argv), pytest.raises(SystemExit) as exc:
-        cli()
-    assert exc.value.code == 1
+    assert result.exit_code == 1
 
 
 def test_cli_unexpected_error_exits_nonzero(tmp_path):
@@ -542,24 +561,166 @@ def test_cli_unexpected_error_exits_nonzero(tmp_path):
     csv_path = tmp_path / "input.csv"
     csv_path.write_text(CSV_CONTENT)
     out_path = tmp_path / "out.xlsx"
-    argv = _cli_argv(
-        "-q",
-        "-f",
-        str(csv_path),
-        "-o",
-        str(out_path),
-        "-r",
-        "header1",
-        "-c",
-        "header2",
-        "header3",
-        "-v",
-        "value",
-    )
-    with (
-        patch("crosstab.crosstab.Crosstab.crosstab", side_effect=RuntimeError("boom")),
-        patch.object(sys, "argv", argv),
-        pytest.raises(SystemExit) as exc,
-    ):
-        cli()
-    assert exc.value.code == 1
+    with patch("crosstab.cli.Crosstab.crosstab", side_effect=RuntimeError("boom")):
+        result = runner.invoke(
+            app,
+            [
+                "-q",
+                "-f",
+                str(csv_path),
+                "-o",
+                str(out_path),
+                "-r",
+                "header1",
+                "-c",
+                "header2",
+                "header3",
+                "-v",
+                "value",
+            ],
+        )
+    assert result.exit_code == 1
+
+
+def test_cli_missing_required_input_fails():
+    """Omitting --input must fail with a non-zero exit (typer/click validation)."""
+    result = runner.invoke(app, ["-r", "a", "-c", "b", "-v", "v"])
+    assert result.exit_code != 0
+
+
+def test_cli_keep_sqlite_emits_deprecation(tmp_path):
+    """Passing --keep-sqlite via the CLI surfaces the engine's deprecation warning."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    out_path = tmp_path / "out.xlsx"
+    with warnings.catch_warnings(record=True) as captured:
+        warnings.simplefilter("always", DeprecationWarning)
+        result = runner.invoke(
+            app,
+            [
+                "-q",
+                "-k",
+                "-f",
+                str(csv_path),
+                "-o",
+                str(out_path),
+                "-r",
+                "header1",
+                "-c",
+                "header2",
+                "header3",
+                "-v",
+                "value",
+            ],
+        )
+    assert result.exit_code == 0, result.output
+    assert any(issubclass(w.category, DeprecationWarning) and "keep_sqlite" in str(w.message) for w in captured)
+
+
+# ── Identifier quoting & special-character headers ────────────────────────────
+
+
+@pytest.mark.parametrize(
+    ("raw", "quoted"),
+    [
+        ("simple", '"simple"'),
+        ("with space", '"with space"'),
+        ("Depth Interval (ft)", '"Depth Interval (ft)"'),
+        ('has"quote', '"has""quote"'),
+        ("café", '"café"'),
+        ("123leading", '"123leading"'),
+        ("select", '"select"'),
+        ("group by", '"group by"'),
+    ],
+)
+def test_quote_ident(raw, quoted):
+    """Identifier quoting must double internal double-quotes and wrap in quotes."""
+    assert _quote_ident(raw) == quoted
+
+
+SPECIAL_HEADERS_CSV = (
+    'Loc Name,Depth Interval (ft),"Param ""raw""",café,123start,select\n'
+    "A,0-2,pH,arabica,x,a\n"
+    "A,2-4,pH,arabica,x,b\n"
+    "B,0-2,pH,robusta,x,c\n"
+    "B,2-4,pH,robusta,x,d\n"
+)
+
+
+def test_special_character_headers_round_trip(tmp_path):
+    """Headers with spaces, parentheses, embedded quotes, unicode, leading
+    digits, and SQL reserved words must flow through end to end."""
+    csv_path = tmp_path / "special.csv"
+    csv_path.write_text(SPECIAL_HEADERS_CSV, encoding="utf-8")
+    out_path = tmp_path / "special.xlsx"
+
+    Crosstab(
+        incsv=csv_path,
+        outxlsx=out_path,
+        row_headers=("Loc Name",),
+        col_headers=("Depth Interval (ft)",),
+        value_cols=('Param "raw"', "café", "123start", "select"),
+    ).crosstab()
+
+    wb = openpyxl.load_workbook(out_path)
+    ws = wb["Crosstab"]
+    # The column-header label and row-header label share column A.
+    assert ws["A1"].value == "Depth Interval (ft)"
+    assert ws["A2"].value == "Loc Name"
+    # Distinct depth-interval values are placed as column-header values
+    # (each merged across the 4 value-columns).
+    assert ws["B1"].value == "0-2"
+    assert ws["F1"].value == "2-4"
+    # Value-column labels appear in the value-label row beneath the col headers.
+    value_labels = [ws.cell(row=2, column=c).value for c in range(2, 10)]
+    assert value_labels == [
+        'Param "raw"',
+        "café",
+        "123start",
+        "select",
+        'Param "raw"',
+        "café",
+        "123start",
+        "select",
+    ]
+    # Row-header values appear in the data column.
+    assert ws["A3"].value == "A"
+    assert ws["A4"].value == "B"
+    wb.close()
+
+
+# ── Benchmark ─────────────────────────────────────────────────────────────────
+
+
+def _generate_large_csv(path: Path, n_rows: int, n_cols: int) -> None:
+    """Write a CSV with ``n_rows`` row keys and ``n_cols`` column keys."""
+    with path.open("w", encoding="utf-8") as f:
+        f.write("row_key,col_key,value\n")
+        for r in range(n_rows):
+            for c in range(n_cols):
+                f.write(f"r{r:06d},c{c:04d},{r * n_cols + c}\n")
+
+
+def test_benchmark_pivot(benchmark, tmp_path):
+    """Benchmark a 1,000,000-cell crosstab end to end.
+
+    Skipped by default via ``--benchmark-skip`` in ``pyproject.toml``.
+    Run explicitly with ``uv run pytest --benchmark-only`` (or
+    ``--benchmark-enable``) to time it.
+    """
+    n_rows, n_cols = 10_000, 100  # 1,000,000 cells total
+    csv_path = tmp_path / "bench.csv"
+    _generate_large_csv(csv_path, n_rows, n_cols)
+    out_path = tmp_path / "bench.xlsx"
+
+    def _run() -> None:
+        Crosstab(
+            incsv=csv_path,
+            outxlsx=out_path,
+            row_headers=("row_key",),
+            col_headers=("col_key",),
+            value_cols=("value",),
+        ).crosstab()
+
+    benchmark.pedantic(_run, rounds=1, iterations=1)
+    assert out_path.exists()
