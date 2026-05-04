@@ -1,4 +1,4 @@
-FROM python:3.13-alpine AS builder
+FROM python:3.13-slim AS builder
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV UV_SYSTEM_PYTHON=1
@@ -13,19 +13,17 @@ COPY ./src ./src
 
 RUN /bin/uv pip install --no-cache /tmp/build
 
-FROM python:3.13-alpine AS final
+FROM python:3.13-slim AS final
 
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-RUN apk add --no-cache tk ttf-dejavu fontconfig
-
 COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 
-RUN addgroup -S app \
-    && adduser -S -G app app \
+RUN groupadd --system app \
+    && useradd --system --gid app app \
     && chown -R app:app /app
 
 USER app

@@ -8,6 +8,14 @@ ______________________________________________________________________
 
 ## [Unreleased]
 
+### Fixed
+
+- Docker image build. The previous Alpine-based image (`python:3.13-alpine`)
+    failed to install DuckDB because DuckDB only ships prebuilt wheels for
+    `manylinux` (glibc), not `musl`, and the Alpine builder has no C++
+    toolchain to compile from source. Switched both stages of the Dockerfile
+    to `python:3.13-slim` (Debian) so the prebuilt DuckDB wheel is used.
+
 ______________________________________________________________________
 
 ## [0.2.0] - 2026-05-04
@@ -96,5 +104,5 @@ revamp.
 
 [0.0.15]: https://github.com/geocoug/crosstab/releases/tag/v0.0.15
 [0.1.0]: https://github.com/geocoug/crosstab/releases/tag/v0.1.0
-[unreleased]: https://github.com/geocoug/crosstab/compare/v0.2.0...HEAD
 [0.2.0]: https://github.com/geocoug/crosstab/releases/tag/v0.2.0
+[unreleased]: https://github.com/geocoug/crosstab/compare/v0.2.0...HEAD
