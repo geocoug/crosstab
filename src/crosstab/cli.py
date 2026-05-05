@@ -156,6 +156,13 @@ def _configure_logging(*, quiet: bool, debug: bool, logfile: Path | None) -> Non
     help="Output XLSX file. Defaults to <input>_crosstab.xlsx.",
 )
 @click.option(
+    "--fill",
+    "fill",
+    type=str,
+    default=None,
+    help="Value to write into empty cells. Empty by default.",
+)
+@click.option(
     "-s",
     "--keep-src",
     is_flag=True,
@@ -164,10 +171,10 @@ def _configure_logging(*, quiet: bool, debug: bool, logfile: Path | None) -> Non
 )
 @click.option(
     "-k",
-    "--keep-sqlite",
+    "--keep-duckdb",
     is_flag=True,
     default=False,
-    help="(deprecated, ignored) The engine no longer uses SQLite.",
+    help="Persist the DuckDB database to <input>.duckdb so it can be queried later.",
 )
 @click.option(
     "-q",
@@ -198,8 +205,9 @@ def app(
     col_headers: tuple[str, ...],
     value_cols: tuple[str, ...],
     outxlsx: Path | None,
+    fill: str | None,
     keep_src: bool,
-    keep_sqlite: bool,
+    keep_duckdb: bool,
     quiet: bool,
     debug: bool,
     logfile: Path | None,
@@ -213,8 +221,9 @@ def app(
             row_headers=row_headers,
             col_headers=col_headers,
             value_cols=value_cols,
-            keep_sqlite=keep_sqlite,
+            fill=fill,
             keep_src=keep_src,
+            keep_duckdb=keep_duckdb,
         ).crosstab()
     except ValueError as exc:
         logger.error(f"ValueError: {exc}")

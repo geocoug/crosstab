@@ -396,6 +396,7 @@ name = "crosstab"
 version = "0.2.1"
 source = { editable = "." }
 dependencies = [
+    { name = "click" },
     { name = "duckdb" },
     { name = "rich" },
     { name = "rich-click" },
@@ -422,6 +423,7 @@ dev = [
 requires-dist = [
     { name = "build", marker = "extra == 'dev'", specifier = ">=1.2.2.post1" },
     { name = "bump-my-version", marker = "extra == 'dev'", specifier = ">=1.2.7" },
+    { name = "click", specifier = ">=8,<9" },
     { name = "duckdb", specifier = ">=1.0" },
     { name = "mkdocstrings-python", marker = "extra == 'dev'", specifier = ">=2.0.3" },
     { name = "openpyxl", marker = "extra == 'dev'", specifier = ">=3.1" },
