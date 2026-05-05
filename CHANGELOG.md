@@ -8,6 +8,10 @@ ______________________________________________________________________
 
 ## [Unreleased]
 
+______________________________________________________________________
+
+## [0.3.0] - 2026-05-05
+
 ### Added
 
 - `fill` keyword argument and `--fill` CLI option to substitute a
@@ -141,4 +145,5 @@ revamp.
 [0.1.0]: https://github.com/geocoug/crosstab/releases/tag/v0.1.0
 [0.2.0]: https://github.com/geocoug/crosstab/releases/tag/v0.2.0
 [0.2.1]: https://github.com/geocoug/crosstab/releases/tag/v0.2.1
-[unreleased]: https://github.com/geocoug/crosstab/compare/v0.2.1...HEAD
+[unreleased]: https://github.com/geocoug/crosstab/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/geocoug/crosstab/releases/tag/v0.3.0
