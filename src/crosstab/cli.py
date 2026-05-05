@@ -94,7 +94,16 @@ def _configure_logging(*, quiet: bool, debug: bool, logfile: Path | None) -> Non
     logger.propagate = False
 
     if not quiet:
-        logger.addHandler(RichHandler(show_time=False, show_path=False, markup=False))
+        # Only show the level prefix (INFO/DEBUG/...) in debug mode; the
+        # default run hides it so plain INFO messages render as bare text.
+        logger.addHandler(
+            RichHandler(
+                show_time=False,
+                show_path=False,
+                show_level=debug,
+                markup=False,
+            ),
+        )
     if logfile is not None:
         file_handler = logging.FileHandler(logfile)
         file_handler.setFormatter(
