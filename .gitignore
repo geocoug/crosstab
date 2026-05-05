@@ -28,6 +28,7 @@ docs/_build/
 # Generated artifacts (test outputs)
 *.sqlite
 *.xlsx
+examples/
 
 # Editor / agent metadata
 .claude/

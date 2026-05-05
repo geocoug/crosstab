@@ -23,6 +23,11 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 ]
 dependencies = [
+    # Pinned to <9 because crosstab.cli.OptionEatAll uses Click's private
+    # parser API (parser._long_opt, _short_opt, our_parser.process). This is
+    # stable across Click 8.x. When Click 9 ships, retest OptionEatAll
+    # against the new API and bump (or rewrite) before relaxing the pin.
+    "click>=8,<9",
     "duckdb>=1.0",
     "rich>=13.0",
     "rich-click>=1.7",
@@ -163,10 +168,6 @@ isolated_build = true
 description = "Run tests under {base_python}"
 extras = ["dev"]
 commands = [["pytest", "{posargs}"]]
-# Pass through user/login env vars so getpass.getuser() works on Windows
-# (tox strips the environment by default; without these it falls through
-# to `import pwd`, which does not exist on Windows).
-passenv = ["USERNAME", "USER", "LOGNAME", "LNAME", "USERPROFILE", "HOMEDRIVE", "HOMEPATH"]
 
 [tool.tox.env.build]
 description = "Build distribution packages"

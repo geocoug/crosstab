@@ -2,7 +2,6 @@
 
 import logging
 import tempfile
-import warnings
 from pathlib import Path
 from unittest.mock import patch
 
@@ -12,7 +11,7 @@ from click.testing import CliRunner
 
 from crosstab import __version__
 from crosstab.cli import app
-from crosstab.crosstab import Crosstab, _current_user, _quote_ident
+from crosstab.crosstab import Crosstab, _quote_ident
 
 runner = CliRunner()
 
@@ -233,39 +232,65 @@ def test_csv_columns_are_detected(temp_csv_file):
     crosstab.close()
 
 
-def test_keep_sqlite_emits_deprecation_warning(temp_csv_file, temp_xlsx_file):
-    """`keep_sqlite=True` is accepted but emits a DeprecationWarning."""
-    with pytest.warns(DeprecationWarning, match="keep_sqlite is deprecated"):
-        Crosstab(
-            incsv=temp_csv_file,
-            outxlsx=temp_xlsx_file,
-            row_headers=("header1",),
-            col_headers=("header2",),
-            value_cols=("value",),
-            keep_sqlite=True,
-        ).close()
-
-
-def test_keep_sqlite_does_not_create_sqlite_file(tmp_path):
-    """The deprecated `keep_sqlite=True` flag must not produce a SQLite file."""
+def test_keep_duckdb_creates_database_file(tmp_path):
+    """`keep_duckdb=True` produces a queryable DuckDB file alongside the input."""
     csv_path = tmp_path / "input.csv"
     csv_path.write_text(CSV_CONTENT)
     out_path = tmp_path / "out.xlsx"
-    sqlite_path = csv_path.with_suffix(".sqlite")
+    duckdb_path = csv_path.with_suffix(".duckdb")
 
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore", DeprecationWarning)
-        Crosstab(
-            incsv=csv_path,
-            outxlsx=out_path,
-            row_headers=("header1",),
-            col_headers=("header2", "header3"),
-            value_cols=("value",),
-            keep_sqlite=True,
-        ).crosstab()
+    Crosstab(
+        incsv=csv_path,
+        outxlsx=out_path,
+        row_headers=("header1",),
+        col_headers=("header2", "header3"),
+        value_cols=("value",),
+        keep_duckdb=True,
+    ).crosstab()
 
     assert out_path.exists()
-    assert not sqlite_path.exists()
+    assert duckdb_path.exists()
+    assert duckdb_path.stat().st_size > 0
+
+
+def test_keep_duckdb_overwrites_existing_database_file(tmp_path):
+    """A pre-existing .duckdb at the target path is replaced, not appended."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    duckdb_path = csv_path.with_suffix(".duckdb")
+    duckdb_path.write_bytes(b"stale-bytes")
+
+    Crosstab(
+        incsv=csv_path,
+        outxlsx=tmp_path / "out.xlsx",
+        row_headers=("header1",),
+        col_headers=("header2", "header3"),
+        value_cols=("value",),
+        keep_duckdb=True,
+    ).crosstab()
+
+    assert duckdb_path.read_bytes() != b"stale-bytes"
+
+
+def test_fill_substitutes_blanks(temp_csv_file, temp_xlsx_file):
+    """When `fill` is set, missing (row, col) pairs render with the fill value."""
+    Crosstab(
+        incsv=temp_csv_file,
+        outxlsx=temp_xlsx_file,
+        row_headers=("header1",),
+        col_headers=("header2", "header3"),
+        value_cols=("value",),
+        fill="N/A",
+    ).crosstab()
+    wb = openpyxl.load_workbook(temp_xlsx_file)
+    ws = wb["Crosstab"]
+    # In the fixture, (A, 2, 2018) and (A, 2, 2019) have no rows, so those
+    # cells should now be filled.
+    assert ws["D4"].value == "N/A"
+    assert ws["E4"].value == "N/A"
+    # Cells with real data are unaffected.
+    assert ws["B4"].value == "10"
+    wb.close()
 
 
 def test_duplicate_row_col_combination_raises(temp_csv_with_duplicates, temp_xlsx_file):
@@ -293,13 +318,13 @@ def test_crosstab_creation(temp_csv_file, temp_xlsx_file):
     )
     crosstab.crosstab()
     assert temp_xlsx_file.exists()
-    # README + Crosstab + Source Data
+    # Crosstab + Source Data — no README sheet anymore.
     wb = openpyxl.load_workbook(temp_xlsx_file)
-    assert wb.sheetnames == ["README", "Crosstab", "Source Data"]
+    assert wb.sheetnames == ["Crosstab", "Source Data"]
 
 
 def test_crosstab_omits_source_sheet_when_keep_src_false(temp_csv_file, temp_xlsx_file):
-    """With keep_src=False the Source Data sheet should not be created."""
+    """With keep_src=False the workbook contains only the Crosstab sheet."""
     Crosstab(
         incsv=temp_csv_file,
         outxlsx=temp_xlsx_file,
@@ -309,9 +334,7 @@ def test_crosstab_omits_source_sheet_when_keep_src_false(temp_csv_file, temp_xls
         keep_src=False,
     ).crosstab()
     wb = openpyxl.load_workbook(temp_xlsx_file)
-    assert "Source Data" not in wb.sheetnames
-    assert "Crosstab" in wb.sheetnames
-    assert "README" in wb.sheetnames
+    assert wb.sheetnames == ["Crosstab"]
 
 
 def test_crosstab_rows_single_value_column(temp_csv_file, temp_xlsx_file):
@@ -322,7 +345,6 @@ def test_crosstab_rows_single_value_column(temp_csv_file, temp_xlsx_file):
         row_headers=("header1",),
         col_headers=("header2", "header3"),
         value_cols=("value",),
-        keep_sqlite=False,
         keep_src=True,
     ).crosstab()
     wb = openpyxl.load_workbook(temp_xlsx_file)
@@ -366,7 +388,6 @@ def test_crosstab_rows_multi_value_column(temp_csv_file, temp_xlsx_file):
         row_headers=("header1",),
         col_headers=("header2", "header3"),
         value_cols=("value", "unit"),
-        keep_sqlite=False,
         keep_src=True,
     ).crosstab()
     wb = openpyxl.load_workbook(temp_xlsx_file)
@@ -591,59 +612,65 @@ def test_cli_missing_required_input_fails():
     assert result.exit_code != 0
 
 
-def test_cli_keep_sqlite_emits_deprecation(tmp_path):
-    """Passing --keep-sqlite via the CLI surfaces the engine's deprecation warning."""
+def test_cli_keep_duckdb_creates_database_file(tmp_path):
+    """`--keep-duckdb` writes a queryable DuckDB file alongside the input."""
     csv_path = tmp_path / "input.csv"
     csv_path.write_text(CSV_CONTENT)
     out_path = tmp_path / "out.xlsx"
-    with warnings.catch_warnings(record=True) as captured:
-        warnings.simplefilter("always", DeprecationWarning)
-        result = runner.invoke(
-            app,
-            [
-                "-q",
-                "-k",
-                "-f",
-                str(csv_path),
-                "-o",
-                str(out_path),
-                "-r",
-                "header1",
-                "-c",
-                "header2",
-                "header3",
-                "-v",
-                "value",
-            ],
-        )
-    assert result.exit_code == 0, result.output
-    assert any(issubclass(w.category, DeprecationWarning) and "keep_sqlite" in str(w.message) for w in captured)
-
-
-# ── Environment-aware helpers ─────────────────────────────────────────────────
-
-
-def test_current_user_uses_env_var(monkeypatch):
-    """When USERNAME/USER/LOGNAME/LNAME is set, ``_current_user`` returns it
-    without consulting ``getpass``."""
-    for var in ("USERNAME", "LOGNAME", "LNAME"):
-        monkeypatch.delenv(var, raising=False)
-    monkeypatch.setenv("USER", "alice")
-    monkeypatch.setattr(
-        "crosstab.crosstab.getpass.getuser",
-        lambda: pytest.fail("getpass.getuser must not be called when env is populated"),
+    duckdb_path = csv_path.with_suffix(".duckdb")
+    result = runner.invoke(
+        app,
+        [
+            "-q",
+            "-k",
+            "-f",
+            str(csv_path),
+            "-o",
+            str(out_path),
+            "-r",
+            "header1",
+            "-c",
+            "header2",
+            "header3",
+            "-v",
+            "value",
+        ],
     )
-    assert _current_user() == "alice"
+    assert result.exit_code == 0, result.output
+    assert duckdb_path.exists()
 
 
-def test_current_user_falls_back_to_getpass(monkeypatch):
-    """With every username env var cleared, ``_current_user`` falls back to
-    ``getpass.getuser()``. This covers the Windows-under-tox path where
-    ``getpass`` would otherwise import the non-existent ``pwd`` module."""
-    for var in ("USERNAME", "USER", "LOGNAME", "LNAME"):
-        monkeypatch.delenv(var, raising=False)
-    monkeypatch.setattr("crosstab.crosstab.getpass.getuser", lambda: "tester")
-    assert _current_user() == "tester"
+def test_cli_fill_substitutes_blank_cells(tmp_path):
+    """`--fill X` writes X into otherwise-empty cells."""
+    csv_path = tmp_path / "input.csv"
+    csv_path.write_text(CSV_CONTENT)
+    out_path = tmp_path / "out.xlsx"
+    result = runner.invoke(
+        app,
+        [
+            "-q",
+            "--fill",
+            "—",
+            "-f",
+            str(csv_path),
+            "-o",
+            str(out_path),
+            "-r",
+            "header1",
+            "-c",
+            "header2",
+            "header3",
+            "-v",
+            "value",
+        ],
+    )
+    assert result.exit_code == 0, result.output
+    wb = openpyxl.load_workbook(out_path)
+    ws = wb["Crosstab"]
+    # The (A, 2/2018) cell is empty in the source data; with --fill set, it
+    # should now hold the placeholder string instead of being blank.
+    assert ws["D4"].value == "—"
+    wb.close()
 
 
 # ── Identifier quoting & special-character headers ────────────────────────────

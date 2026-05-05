@@ -40,8 +40,6 @@ docker pull ghcr.io/geocoug/crosstab:latest
 
 The output workbook contains:
 
-1. **README** — metadata about the run (timestamp, user, script version,
-    input/output paths).
 1. **Crosstab** — the pivoted table. Row-header values are listed on the
     left; each distinct combination of column-header values fans out across
     the top, with one sub-column per requested value column.
@@ -99,7 +97,27 @@ docker run --rm -v $(pwd):/data ghcr.io/geocoug/crosstab:latest \
     are not coerced to numbers or dates.
 - **Deterministic ordering.** Row keys and column keys are sorted before
     being written, so re-running the same input produces a byte-identical
-    output (modulo the timestamp on the README sheet).
+    output.
 - **Strict duplicate detection.** If any `(row_key, col_key)` combination
     appears more than once in the input, the run fails with a clear
-    `ValueError` rather than silently dropping data.
+    `ValueError` rather than silently dropping data. Pre-aggregate the
+    CSV with DuckDB, pandas, polars, etc. before crosstabbing if your
+    source data has duplicates that should be combined.
+
+## Filling empty cells
+
+By default, cells with no matching `(row_key, col_key)` row are left
+blank. Pass `fill="—"` (or any string) to substitute a placeholder:
+
+```bash
+crosstab --fill "N/A" \
+    -f results.csv \
+    -r station -c parameter -v concentration
+```
+
+## Persisting the database
+
+Pass `keep_duckdb=True` (or `--keep-duckdb` / `-k`) to save the staged
+input as a DuckDB database at `<input>.duckdb` so it can be queried again
+later — handy when you want to follow up the pivot with ad-hoc SQL
+without re-reading the CSV.

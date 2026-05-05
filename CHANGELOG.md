@@ -8,6 +8,37 @@ ______________________________________________________________________
 
 ## [Unreleased]
 
+### Added
+
+- `fill` keyword argument and `--fill` CLI option to substitute a
+    placeholder string for cells that have no matching row in the input.
+- `keep_duckdb` keyword argument and `-k` / `--keep-duckdb` CLI option
+    that persists the staged input as a DuckDB database file at
+    `<input>.duckdb`, so users can re-query the data with ad-hoc SQL after
+    the pivot finishes.
+
+### Changed
+
+- `click` is now pinned to `>=8,<9` because `crosstab.cli.OptionEatAll`
+    reaches into Click's private parser API (`parser._long_opt`,
+    `_short_opt`, `our_parser.process`) to implement `argparse`-style
+    variadic options. The pin makes a future Click 9 release require
+    explicit verification rather than silently breaking the CLI.
+
+### Removed
+
+- The "README" sheet that previously appeared as the first sheet of every
+    output workbook. It was leaking the runner's local username and
+    absolute filesystem paths into shared workbooks, and the `Crosstab` and
+    optional `Source Data` sheets are sufficient for downstream use.
+- `keep_sqlite` keyword argument and the `-k` / `--keep-sqlite` CLI flag.
+    These have been deprecated since 0.2.0 and emitted a
+    `DeprecationWarning`; they are now removed entirely. Replace with
+    `keep_duckdb`.
+- The `_current_user` helper, `getpass`/`os`/`datetime` imports, and the
+    tox `passenv` workaround that existed solely to power the now-removed
+    README sheet's metadata fields.
+
 ______________________________________________________________________
 
 ## [0.2.1] - 2026-05-04
@@ -109,5 +140,5 @@ revamp.
 [0.0.15]: https://github.com/geocoug/crosstab/releases/tag/v0.0.15
 [0.1.0]: https://github.com/geocoug/crosstab/releases/tag/v0.1.0
 [0.2.0]: https://github.com/geocoug/crosstab/releases/tag/v0.2.0
-[unreleased]: https://github.com/geocoug/crosstab/compare/v0.2.1...HEAD
 [0.2.1]: https://github.com/geocoug/crosstab/releases/tag/v0.2.1
+[unreleased]: https://github.com/geocoug/crosstab/compare/v0.2.1...HEAD
