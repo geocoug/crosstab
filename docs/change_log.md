@@ -10,13 +10,27 @@ ______________________________________________________________________
 
 ### Added
 
-- `agg` keyword argument and `-a` / `--agg` CLI option supporting `first`
-    (the existing strict default), `sum`, `mean`, `count`, `min`, and
-    `max`. `sum` and `mean` coerce values via `TRY_CAST(... AS DOUBLE)`,
-    so non-numeric cells become NULL and are dropped from the aggregate
-    rather than aborting the run. `count`, `min`, and `max` work on any
-    column type. With any `agg` other than `first`, the strict
-    duplicate-detection check is skipped.
+- Codecov badge to the README so coverage is visible at a glance from
+    the repository landing page and PyPI listing.
+
+### Changed
+
+- Default CLI output no longer shows the log-level prefix
+    (`INFO`, `DEBUG`, etc.) in front of every line. The level prefix is
+    now only rendered when `--debug` is set, where the distinction
+    between `DEBUG` and `INFO` actually matters. Plain runs print bare
+    message text.
+
+______________________________________________________________________
+
+## [0.3.1] - 2026-05-05
+
+______________________________________________________________________
+
+## [0.3.0] - 2026-05-05
+
+### Added
+
 - `fill` keyword argument and `--fill` CLI option to substitute a
     placeholder string for cells that have no matching row in the input.
 - `keep_duckdb` keyword argument and `-k` / `--keep-duckdb` CLI option
@@ -26,9 +40,6 @@ ______________________________________________________________________
 
 ### Changed
 
-- The `agg` parameter is the new home for "what should happen with
-    duplicates"; the previous behavior is preserved as `agg="first"` (the
-    default).
 - `click` is now pinned to `>=8,<9` because `crosstab.cli.OptionEatAll`
     reaches into Click's private parser API (`parser._long_opt`,
     `_short_opt`, `our_parser.process`) to implement `argparse`-style
@@ -151,4 +162,6 @@ revamp.
 [0.1.0]: https://github.com/geocoug/crosstab/releases/tag/v0.1.0
 [0.2.0]: https://github.com/geocoug/crosstab/releases/tag/v0.2.0
 [0.2.1]: https://github.com/geocoug/crosstab/releases/tag/v0.2.1
-[unreleased]: https://github.com/geocoug/crosstab/compare/v0.2.1...HEAD
+[0.3.0]: https://github.com/geocoug/crosstab/releases/tag/v0.3.0
+[0.3.1]: https://github.com/geocoug/crosstab/releases/tag/v0.3.1
+[unreleased]: https://github.com/geocoug/crosstab/compare/v0.3.1...HEAD

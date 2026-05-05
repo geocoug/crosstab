@@ -8,6 +8,19 @@ ______________________________________________________________________
 
 ## [Unreleased]
 
+### Added
+
+- Codecov badge to the README so coverage is visible at a glance from
+    the repository landing page and PyPI listing.
+
+### Changed
+
+- Default CLI output no longer shows the log-level prefix
+    (`INFO`, `DEBUG`, etc.) in front of every line. The level prefix is
+    now only rendered when `--debug` is set, where the distinction
+    between `DEBUG` and `INFO` actually matters. Plain runs print bare
+    message text.
+
 ______________________________________________________________________
 
 ## [0.3.1] - 2026-05-05
@@ -149,6 +162,6 @@ revamp.
 [0.1.0]: https://github.com/geocoug/crosstab/releases/tag/v0.1.0
 [0.2.0]: https://github.com/geocoug/crosstab/releases/tag/v0.2.0
 [0.2.1]: https://github.com/geocoug/crosstab/releases/tag/v0.2.1
-[unreleased]: https://github.com/geocoug/crosstab/compare/v0.3.1...HEAD
-[0.3.1]: https://github.com/geocoug/crosstab/releases/tag/v0.3.1
 [0.3.0]: https://github.com/geocoug/crosstab/releases/tag/v0.3.0
+[0.3.1]: https://github.com/geocoug/crosstab/releases/tag/v0.3.1
+[unreleased]: https://github.com/geocoug/crosstab/compare/v0.3.1...HEAD
